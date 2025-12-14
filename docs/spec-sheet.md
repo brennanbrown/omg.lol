@@ -29,6 +29,8 @@ omg.lol/
 │   └── special-pastes.md
 ├── pics/
 │   └── template.html
+├── scripts/
+│   └── key-generator.sh
 ├── web/
 │   ├── custom.css
 │   ├── head.html
