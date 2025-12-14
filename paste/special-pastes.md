@@ -1,0 +1,4 @@
+* **atproto-did**: If you make a pastebin entry titled **atproto-did**, the contents of that file will be served at `https://[your-address].omg.lol/.well-known/atproto-did`, which is helpful for verifying domain ownership within ATProtocol implementations.
+* **security.txt**: If you want to host a [security.txt](https://securitytxt.org/) file at the canonical `/.well-known/security-txt` path, create a pastebin entry with that name.
+* **robots.txt**: Same as above.
+* **.plan**: If you create a pastebin entry named `.plan`, that content will be shared if someone checks your address with the [Finger user information protocol](https://en.wikipedia.org/wiki/Finger_(protocol)).
