@@ -36,6 +36,9 @@ There’s no build step and no automation here (yet). The goal is simply:
   Notes/reference docs I keep alongside the config. In particular:
   - `spec-sheet.md` — a spec for future GitHub Actions syncing (not implemented here)
 
+- **`scripts/`**
+  - `key-generator.sh` — interactive script to generate public/private keys for omg.lol (runs locally; never commit generated private keys)
+
 ## How to apply changes (manual)
 
 - **omg.lol profile page**
