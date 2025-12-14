@@ -1,0 +1,55 @@
+/* Import EB Garamond from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Apply EB Garamond to all elements */
+* {
+  font-family: 'EB Garamond', serif;
+}
+
+/* Specifically set for common elements */
+body, 
+h1, h2, h3, h4, h5, h6,
+p, li, a, span, div,
+article, aside, section {
+  font-family: 'EB Garamond', serif;
+}
+
+/* Justify body text */
+body {
+  text-align: left;
+}
+
+p, 
+article p,
+li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Keep headings center-aligned */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+/* Optional: Improve readability with these settings */
+body {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Optional: Style links to match the classic typography */
+a {
+  color: #2c5282;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: #1a365d;
+}
+
+/* Optional: Style code blocks with a monospace fallback */
+code, pre {
+  font-family: 'Courier New', monospace;
+}

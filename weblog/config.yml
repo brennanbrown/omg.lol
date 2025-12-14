@@ -1,0 +1,148 @@
+// Weblog Configuration
+
+;; About your weblog
+;; -----------------
+
+Weblog title: Brennan's Weblog
+Weblog description: Essays, poetry, and musings on writing, technology, and the human experience. A Queer Métis writer exploring the intersections of Indigenous identity, digital culture, and creative craft.
+Author: Brennan Kenneth Brown
+// Canonical domain: brennan.weblog.lol
+// Landing page: /
+Landing page template: Landing Page Template
+
+
+;; General config stuff
+;; --------------------
+
+Separator:  · 
+Navigation: <a href="https://brennanbrown.ca">Main Site</a>, <a href="https://berryhouse.ca">Berry House</a>, <a href="https://writeclub.ca">Write Club</a>, <a href="https://bkpoetry.com">Poetry</a>, /now, /tags
+Files path: /files/
+Landing page post count: 3
+Landing page post length: 100 words
+Post template: Post Template
+
+
+;; Pagination
+;; ----------
+
+Pagination path: /page/
+Previous page template: <span class="previous-page"><a href="$previous_page">← Previous</a></span>
+Next page template: <span class="next-page"><a href="$next_page">Next →</a></span>
+
+
+;; Time stuff
+;; ----------
+
+; Using Mountain Time (Calgary, Alberta)
+Timezone: America/Edmonton
+Date format: F j, Y
+
+
+;; Feeds
+;; -----
+
+Feed post count: 25
+Feed post appendix: <p><em>Read more at <a href="https://brennanbrown.ca">brennanbrown.ca</a> or support my work on <a href="https://patreon.com/brennankbrown">Patreon</a>.</em></p>
+
+
+;; Posts
+;; -----
+
+Post path format: /Y/m/
+Default post: <<[---
+Date: $date
+---
+
+# Your new post
+
+Write something worth reading. Make it human.
+]>>
+
+Titleless title length: 20 words
+Truncation appendix:  […]
+// Title format: <h1><a href="$permalink">$title</a></h1>
+
+Multiple posts count: 10
+Multiple posts format: <<[
+[post:begin]
+<article>
+  {body}
+  <aside class="post-info">
+    <i class="fa-solid fa-calendar"></i> {date}
+  </aside>
+  <aside class="post-tags">
+    {tags}
+  </aside>
+</article>
+[post:end]
+]>>
+
+;; Recent posts {recent-posts}
+;; ---------------------------
+
+Recent posts count: 5
+Recent posts format: <<[
+<ul>
+[post:begin]<li><a href="$location">$title</a> · <span class="post-date">{date}</span></li>[post:end]
+</ul>]>>
+
+
+;; Post list {post-list}
+;; ---------------------
+
+Post list format: <<[
+<ul>
+[post:begin]<li><a href="$location">$title</a> · <span class="post-date">{date}</span></li>[post:end]
+</ul>]>>
+
+
+;; Page list {page-list}
+;; ---------------------
+
+Page list format: <<[
+<ul>
+[page:begin]<li><a href="$location">$title</a></li>[page:end]
+</ul>]>>
+
+
+;; Search
+;; ------
+
+Search status: enabled
+Search template: Page Template
+Search results success message: Found $count [result|results] for your search:
+Search results failure message: No results found. Try different keywords or browse <a href="/tags">all tags</a>.
+Search results format: <<[
+<h2>Results for "$search"</h2>
+<p>$search_results_message</p>
+[post:begin]<h3><a href="$location">$title</a></h3>
+<p><em>{date}</em></p>
+<p>$snippet</p>[post:end]
+]>>
+
+
+;; Tags {tags}
+;; -----------
+
+Tag path: /tag/
+// Tag page template: Tag Template
+Tags format: <<[
+[tag:begin]<a class="tag" href="$tag_location">#$tag</a>[tag:end]
+]>>
+Tag page format: <<[
+<h2>Posts tagged "$tag"</h2>
+<ul>
+[tag:begin]<li><a href="$location">$title</a> · <span class="post-date">{date}</span></li>[tag:end]
+</ul>
+]>>
+
+Tag listing path: /tags
+// Tag listing template: Tag Listing Template
+Tag listing order: descending
+Tag listing format: <<[
+<h2>All Tags</h2>
+<p>Browse by topic. Tags are sorted by frequency.</p>
+<ul class="tag-cloud">
+[tag:begin]<li><a href="$location">$tag</a> <span class="tag-count">($count)</span></li>[tag:end]
+</ul>
+]>>
