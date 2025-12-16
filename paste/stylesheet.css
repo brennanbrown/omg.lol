@@ -25,6 +25,7 @@
 	--nav-violet: #b16286;
 }
 
+:root.dark-mode,
 @media (prefers-color-scheme: dark) {
 	:root {
 		--bg: #282828;
@@ -274,6 +275,31 @@ h1, h2, h3, h4, h5, h6 {
 	align-items: baseline;
 	justify-content: space-between;
 	gap: 0.75rem 1.5rem;
+}
+
+.theme-toggle {
+	background: none;
+	border: 2px solid var(--border);
+	border-radius: 8px;
+	color: var(--fg);
+	font-size: 1.2rem;
+	padding: 0.5rem 0.75rem;
+	cursor: pointer;
+	transition: all 140ms ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.theme-toggle:hover {
+	background: var(--panel);
+	border-color: var(--accent-secondary);
+	color: var(--accent-secondary);
+	transform: scale(1.05);
+}
+
+.theme-toggle:active {
+	transform: scale(0.95);
 }
 
 .weblog-title {
