@@ -455,7 +455,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-body li {
-	margin: 0.5rem 0;
+	margin: 0.25rem 0;
 	text-align: justify;
 	text-justify: inter-word;
 }
@@ -569,7 +569,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar ul li {
-	margin: 0.5rem 0;
+	margin: 0.15rem 0;
 }
 
 .sidebar a {
