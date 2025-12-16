@@ -1,0 +1,17 @@
+Things I want for my weblog:
+- "Return to Top" button in bottom right corner
+- Sticky navigation bar
+  - on mobile shrink font size instead of trying to make hamburger menu.
+  - List of nav links (should all have font awesome icons):
+    - Home
+    - About
+    - Pages
+    - Archive
+    - Contact
+    - RSS
+    - Search
+- Archive page with list of all posts
+- Colophon page
+  - 
+- Footer
+- 
