@@ -26,7 +26,6 @@ All changes are tracked in Git with full version history and automatic deploymen
   - `main-template.html` — main template
   - `page-template.html` — page template
   - `post-template.html` — dedicated post template with enhanced typography
-  - `weblog.css` — shared stylesheet (hosted externally at paste.lol)
 
 - **`paste/`**
   These are “special paste” files served by omg.lol at well-known endpoints:
@@ -34,6 +33,7 @@ All changes are tracked in Git with full version history and automatic deploymen
   - `robots.txt`
   - `security.txt`
   - `.plan`
+  - `stylesheet.css` — weblog CSS (referenced by all templates)
 
 - **`pics/`**
   - `template.html` — placeholder for a custom some.pics template (currently empty)
@@ -68,15 +68,14 @@ All content auto-syncs when you push to the respective directories:
 | `web/` | Profile workflow | Profile content, CSS, and head HTML |
 | `web/now.md` | Now page workflow | /now page content |
 | `weblog/` | Weblog workflow | Configuration and all templates |
-| `paste/` | Paste files workflow | humans.txt, robots.txt, security.txt, .plan |
+| `paste/` | Paste files workflow | humans.txt, robots.txt, security.txt, .plan, stylesheet.css |
 | `statuslog/` | Statuslog workflow | Bio, CSS, and head HTML |
 
 Each directory has its own GitHub Actions workflow in `.github/workflows/` that handles syncing via the omg.lol API.
 
-### Manual (externally hosted files only)
+### Manual steps
 
-- **weblog.css stylesheet**
-  - Upload `weblog/weblog.css` to https://brennan.paste.lol/stylesheet.css (this is hosted externally, not on omg.lol)
+None! Everything syncs automatically via GitHub Actions.
 
 ### Setup
 
