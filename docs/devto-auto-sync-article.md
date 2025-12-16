@@ -365,6 +365,28 @@ The `Title` must match the API endpoint name exactly.
 
 **Character encoding:** Everything should be UTF-8. The API handles it correctly, but double-check your editor settings.
 
+## Smart Optimization: Stylesheet as a Paste
+
+Initially, I kept `weblog.css` in the `weblog/` directory and planned to manually upload it to paste.lol whenever it changed. Then I realized: **paste.lol files are just pastes**. Why not move the stylesheet to the `paste/` directory and let it auto-sync?
+
+```yaml
+- name: Sync stylesheet.css
+  run: |
+    CONTENT=$(cat paste/stylesheet.css)
+    
+    curl --fail-with-body --location --request POST \
+      --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+      --header "Content-Type: application/json" \
+      "https://api.omg.lol/address/brennan/pastebin/" \
+      --data "$(jq -n \
+        --arg content "$CONTENT" \
+        '{title: "stylesheet.css", content: $content}')"
+```
+
+Now my weblog templates reference `https://brennan.paste.lol/stylesheet.css/raw`, and every CSS change auto-syncs. No exceptions. No manual steps.
+
+This is the kind of thinking that makes automation actually work: **question every manual step**. If something feels tedious, there's probably an API endpoint for it.
+
 ## What I Can't Auto-Sync (Yet)
 
 Some omg.lol features don't have API endpoints (or I haven't found them):
