@@ -1,3 +1,4 @@
+/* Gruvbox-inspired color scheme with dark/light mode toggle support */
 :root {
 	color-scheme: light dark;
 	--bg: #fbf1c7;
