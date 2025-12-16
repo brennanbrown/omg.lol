@@ -28,36 +28,53 @@
    })();
    
    document.addEventListener('DOMContentLoaded', function() {
-     // Theme toggle functionality
-     const toggleButton = document.getElementById('theme-toggle');
-     if (toggleButton) {
-       const icon = toggleButton.querySelector('i');
-       const html = document.documentElement;
-       const savedTheme = localStorage.getItem('theme');
-       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-       const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-       
-       // Set initial icon based on current theme
-       if (html.classList.contains('dark-mode') || currentTheme === 'dark') {
-         icon.classList.remove('fa-moon');
-         icon.classList.add('fa-sun');
-       }
-       
-       // Toggle theme on button click
-       toggleButton.addEventListener('click', function() {
-         const isDark = html.classList.toggle('dark-mode');
-         localStorage.setItem('theme', isDark ? 'dark' : 'light');
-         
-         if (isDark) {
-           icon.classList.remove('fa-moon');
-           icon.classList.add('fa-sun');
-         } else {
-           icon.classList.remove('fa-sun');
-           icon.classList.add('fa-moon');
-         }
-       });
-     }
-   });
+    console.log('DOMContentLoaded fired');
+    
+    // Theme toggle functionality
+    const toggleButton = document.getElementById('theme-toggle');
+    console.log('Toggle button found:', toggleButton);
+    
+    if (toggleButton) {
+      const icon = toggleButton.querySelector('i');
+      const html = document.documentElement;
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      
+      console.log('Current theme:', currentTheme);
+      console.log('HTML classes before setup:', html.className);
+      
+      // Set initial icon based on current theme
+      if (html.classList.contains('dark-mode') || currentTheme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+      
+      // Toggle theme on button click
+      toggleButton.addEventListener('click', function(e) {
+        console.log('Toggle button clicked!');
+        e.preventDefault();
+        
+        const isDark = html.classList.toggle('dark-mode');
+        console.log('Toggled to dark mode:', isDark);
+        console.log('HTML classes after toggle:', html.className);
+        
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        
+        if (isDark) {
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
+        } else {
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
+        }
+      });
+      
+      console.log('Theme toggle initialized successfully');
+    } else {
+      console.error('Theme toggle button not found!');
+    }
+  });
  </script>
  </head>
  <body>
@@ -136,7 +153,7 @@
  			<h2>Elsewhere</h2>
  			<ul>
  				<li>[@] <a href="https://me.dm/@brennanbrown">Mastodon</a></li>
- 				<li>[@] <a href="https://bsky.app/profile/brennanbrown.ca">Bluesky</a></li>
+ 				<li>[@] <a href="https://bsky.app/profile/brennanbrown.ca" rel="me atproto">Bluesky</a></li>
  				<li>[@] <a href="mailto:mail@brennanbrown.ca">Email</a></li>
  			</ul>
  		</section>

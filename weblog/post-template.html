@@ -31,37 +31,54 @@ Title: Post Template
    })();
    
    document.addEventListener('DOMContentLoaded', function() {
-     // Theme toggle functionality
-     const toggleButton = document.getElementById('theme-toggle');
-     if (toggleButton) {
-       const icon = toggleButton.querySelector('i');
-       const html = document.documentElement;
-       const savedTheme = localStorage.getItem('theme');
-       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-       const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-       
-       // Set initial icon based on current theme
-       if (html.classList.contains('dark-mode') || currentTheme === 'dark') {
-         icon.classList.remove('fa-moon');
-         icon.classList.add('fa-sun');
-       }
-       
-       // Toggle theme on button click
-       toggleButton.addEventListener('click', function() {
-         const isDark = html.classList.toggle('dark-mode');
-         localStorage.setItem('theme', isDark ? 'dark' : 'light');
-         
-         if (isDark) {
-           icon.classList.remove('fa-moon');
-           icon.classList.add('fa-sun');
-         } else {
-           icon.classList.remove('fa-sun');
-           icon.classList.add('fa-moon');
-         }
-       });
-     }
-     
-     // Silly hack: Remove template metadata if it appears on page
+    console.log('DOMContentLoaded fired');
+    
+    // Theme toggle functionality
+    const toggleButton = document.getElementById('theme-toggle');
+    console.log('Toggle button found:', toggleButton);
+    
+    if (toggleButton) {
+      const icon = toggleButton.querySelector('i');
+      const html = document.documentElement;
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      
+      console.log('Current theme:', currentTheme);
+      console.log('HTML classes before setup:', html.className);
+      
+      // Set initial icon based on current theme
+      if (html.classList.contains('dark-mode') || currentTheme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+      
+      // Toggle theme on button click
+      toggleButton.addEventListener('click', function(e) {
+        console.log('Toggle button clicked!');
+        e.preventDefault();
+        
+        const isDark = html.classList.toggle('dark-mode');
+        console.log('Toggled to dark mode:', isDark);
+        console.log('HTML classes after toggle:', html.className);
+        
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        
+        if (isDark) {
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
+        } else {
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
+        }
+      });
+      
+      console.log('Theme toggle initialized successfully');
+    } else {
+      console.error('Theme toggle button not found!');
+    }
+    
+    // Silly hack: Remove template metadata if it appears on page
      const bodyText = document.body.childNodes;
      for (let i = 0; i < bodyText.length; i++) {
        const node = bodyText[i];
@@ -135,15 +152,15 @@ Title: Post Template
 				<div class="share-buttons">
 					<h3>Share this post</h3>
 					<div class="share-buttons-grid">
-						<a href="https://twitter.com/intent/tweet?text={post-title}&url={location}" target="_blank" rel="noopener" class="share-button share-twitter" aria-label="Share on Twitter/X">
+						<a href="https://twitter.com/intent/tweet?text={post-title}&url={baseURL}{location}" target="_blank" rel="noopener" class="share-button share-twitter" aria-label="Share on Twitter/X">
 							<i class="fa-brands fa-x-twitter"></i>
 							<span>Twitter/X</span>
 						</a>
-						<a href="https://mastodon.social/share?text={post-title}%20{location}" target="_blank" rel="noopener" class="share-button share-mastodon" aria-label="Share on Mastodon">
+						<a href="https://mastodon.social/share?text={post-title}%20{baseURL}{location}" target="_blank" rel="noopener" class="share-button share-mastodon" aria-label="Share on Mastodon">
 							<i class="fa-brands fa-mastodon"></i>
 							<span>Mastodon</span>
 						</a>
-						<a href="mailto:?subject={post-title}&body=Check out this post: {location}" class="share-button share-email" aria-label="Share via Email">
+						<a href="mailto:?subject={post-title}&body=Check out this post: {baseURL}{location}" class="share-button share-email" aria-label="Share via Email">
 							<i class="fa-solid fa-envelope"></i>
 							<span>Email</span>
 						</a>
