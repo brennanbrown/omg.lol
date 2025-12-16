@@ -1,14 +1,16 @@
 # omg.lol
 
-This repo is a version-controlled “source of truth” for my **omg.lol** address configuration.
+This repo is a version-controlled "source of truth" for my **omg.lol** address configuration.
 
-**Weblog changes now auto-sync via GitHub Actions!** When you push changes to the `weblog/` directory, they're automatically deployed to omg.lol.
+**Everything auto-syncs via GitHub Actions!** Push changes to any directory and they're automatically deployed to omg.lol:
 
-For other content (profile, now page, paste files), the process is still manual:
+- 🌐 **Profile** — content, CSS, and custom head HTML
+- 📝 **Weblog** — configuration and all templates  
+- ⏰ **Now page** — /now content
+- 📋 **Paste files** — special pastes (humans.txt, robots.txt, security.txt, .plan)
+- 💬 **Statuslog** — bio, CSS, and custom head HTML
 
-- Keep the content I paste into omg.lol editors in Git
-- Make changes locally, review diffs, and then copy/paste into the relevant omg.lol UI
-- Have a clean backup/history of everything
+All changes are tracked in Git with full version history and automatic deployment.
 
 ## Structure
 
@@ -36,38 +38,53 @@ For other content (profile, now page, paste files), the process is still manual:
 - **`pics/`**
   - `template.html` — placeholder for a custom some.pics template (currently empty)
 
+- **`statuslog/`**
+  - `bio.md` — Statuslog bio content
+  - `custom.css` — custom CSS for Statuslog
+  - `head.html` — custom `<head>` markup for Statuslog
+
+- **`.github/workflows/`**
+  GitHub Actions workflows for automatic syncing:
+  - `sync-weblog.yml` — syncs weblog config and templates
+  - `sync-profile.yml` — syncs profile content, CSS, and head HTML
+  - `sync-now.yml` — syncs /now page
+  - `sync-pastes.yml` — syncs paste files
+  - `sync-statuslog.yml` — syncs Statuslog bio, CSS, and head HTML
+
 - **`docs/`**
-  Notes/reference docs I keep alongside the config. In particular:
-  - `spec-sheet.md` — a spec for future GitHub Actions syncing (not implemented here)
+  Notes/reference docs I keep alongside the config
 
 - **`scripts/`**
   - `key-generator.sh` — interactive script to generate public/private keys for omg.lol (runs locally; never commit generated private keys)
 
 ## How to apply changes
 
-### Automatic (weblog only)
+### Automatic (everything!)
 
-Push any changes to the `weblog/` directory to automatically sync:
-- Configuration (`config.yml`)
-- All templates (landing page, main, page, post)
+All content auto-syncs when you push to the respective directories:
 
-The GitHub Actions workflow (`.github/workflows/sync-weblog.yml`) handles this via the omg.lol API.
+| Directory | Triggers | What Syncs |
+|-----------|----------|------------|
+| `web/` | Profile workflow | Profile content, CSS, and head HTML |
+| `web/now.md` | Now page workflow | /now page content |
+| `weblog/` | Weblog workflow | Configuration and all templates |
+| `paste/` | Paste files workflow | humans.txt, robots.txt, security.txt, .plan |
+| `statuslog/` | Statuslog workflow | Bio, CSS, and head HTML |
 
-### Manual (everything else)
+Each directory has its own GitHub Actions workflow in `.github/workflows/` that handles syncing via the omg.lol API.
 
-- **omg.lol profile page**
-  - Copy/paste `web/main.md` into the omg.lol web editor
-  - Copy/paste `web/custom.css` into the custom CSS field
-  - Copy/paste `web/head.html` into the custom `<head>` field
-
-- **/now page**
-  - Copy/paste `web/now.md` into the Now editor (or use the API manually)
+### Manual (externally hosted files only)
 
 - **weblog.css stylesheet**
-  - Upload `weblog/weblog.css` to https://brennan.paste.lol/stylesheet.css
+  - Upload `weblog/weblog.css` to https://brennan.paste.lol/stylesheet.css (this is hosted externally, not on omg.lol)
 
-- **Paste "special files"**
-  - Create pastebin entries matching the filenames in `paste/` (see `paste/special-pastes.md`)
+### Setup
+
+The workflows require an API key stored as a GitHub secret:
+
+1. Go to your repo's **Settings** → **Secrets and variables** → **Actions**
+2. Add a secret named `OMG_LOL_API_KEY` with your omg.lol API key
+3. Push changes and workflows will run automatically!
 
 ## License
 
