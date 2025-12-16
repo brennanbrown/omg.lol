@@ -2,7 +2,9 @@
 
 This repo is a version-controlled “source of truth” for my **omg.lol** address configuration.
 
-There’s no build step and no automation here (yet). The goal is simply:
+**Weblog changes now auto-sync via GitHub Actions!** When you push changes to the `weblog/` directory, they're automatically deployed to omg.lol.
+
+For other content (profile, now page, paste files), the process is still manual:
 
 - Keep the content I paste into omg.lol editors in Git
 - Make changes locally, review diffs, and then copy/paste into the relevant omg.lol UI
@@ -19,8 +21,10 @@ There’s no build step and no automation here (yet). The goal is simply:
 - **`weblog/`**
   - `config.yml` — weblog.lol configuration
   - `landing-page-template.html` — landing page template
-  - `main-template.html` — post template
-  - `page-template.html` — general page template
+  - `main-template.html` — main template
+  - `page-template.html` — page template
+  - `post-template.html` — dedicated post template with enhanced typography
+  - `weblog.css` — shared stylesheet (hosted externally at paste.lol)
 
 - **`paste/`**
   These are “special paste” files served by omg.lol at well-known endpoints:
@@ -39,7 +43,17 @@ There’s no build step and no automation here (yet). The goal is simply:
 - **`scripts/`**
   - `key-generator.sh` — interactive script to generate public/private keys for omg.lol (runs locally; never commit generated private keys)
 
-## How to apply changes (manual)
+## How to apply changes
+
+### Automatic (weblog only)
+
+Push any changes to the `weblog/` directory to automatically sync:
+- Configuration (`config.yml`)
+- All templates (landing page, main, page, post)
+
+The GitHub Actions workflow (`.github/workflows/sync-weblog.yml`) handles this via the omg.lol API.
+
+### Manual (everything else)
 
 - **omg.lol profile page**
   - Copy/paste `web/main.md` into the omg.lol web editor
@@ -49,11 +63,10 @@ There’s no build step and no automation here (yet). The goal is simply:
 - **/now page**
   - Copy/paste `web/now.md` into the Now editor (or use the API manually)
 
-- **weblog.lol**
-  - Apply settings from `weblog/config.yml` in the weblog configuration UI
-  - Copy/paste templates from `weblog/*.html` into the relevant template editors
+- **weblog.css stylesheet**
+  - Upload `weblog/weblog.css` to https://brennan.paste.lol/stylesheet.css
 
-- **Paste “special files”**
+- **Paste "special files"**
   - Create pastebin entries matching the filenames in `paste/` (see `paste/special-pastes.md`)
 
 ## License
