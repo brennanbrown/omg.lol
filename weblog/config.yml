@@ -1,5 +1,4 @@
 // Weblog Configuration
-// Testing auto-sync workflow
 
 ;; About your weblog
 ;; -----------------
@@ -81,7 +80,7 @@ Recent posts count: 5
 Recent posts format: <<[
 <div class="recent-posts-list">
 [post:begin]<article class="recent-post-item">
-<h3 class="recent-post-title"><a href="$location">$title</a></h3>
+<h2 class="recent-post-title"><a href="$location">$title</a></h2>
 <p class="recent-post-meta">$date</p>
 </article>[post:end]
 </div>]>>

@@ -482,11 +482,28 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 800;
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
+	color: var(--fg);
 }
 
 .sidebar ul {
 	margin: 0;
 	padding-left: 1.25rem;
+}
+
+.sidebar ul li {
+	margin: 0.5rem 0;
+}
+
+.sidebar a {
+	min-height: 48px;
+	display: inline-block;
+	padding: 0.25rem 0;
+	color: var(--link);
+	text-decoration: underline;
+}
+
+.sidebar a:hover {
+	color: var(--link-hover);
 }
 
 .badges-grid {
