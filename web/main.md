@@ -58,6 +58,16 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 
 💼 Berry House: hi@berryhouse.ca
 
+--- Public keys ---
+
+## Public keys
+ 
+- {pgp-key}
+- {ssh-key}
+- {age-key}
+- {cosign-key}
+- {minisign-key}
+
 --- Values ---
 
 I operate on a dual-mission model: providing professional services to corporate clients funds pro bono work for nonprofits, marginalized communities, and vulnerable individuals. Every paid project helps me continue providing accessible web services to those who need them most.
