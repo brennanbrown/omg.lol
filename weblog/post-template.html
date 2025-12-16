@@ -18,41 +18,49 @@ Title: Post Template
  <link rel="stylesheet" href="https://brennan.paste.lol/stylesheet.css/raw">
  {feeds}
  <script>
-   // Theme toggle functionality
+   // Apply saved theme immediately to avoid flash
    (function() {
-     const toggleButton = document.getElementById('theme-toggle');
-     const icon = toggleButton.querySelector('i');
      const html = document.documentElement;
-     
-     // Check for saved theme preference or default to system preference
      const savedTheme = localStorage.getItem('theme');
      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
      const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
      
-     // Apply theme immediately (before DOMContentLoaded to avoid flash)
      if (currentTheme === 'dark') {
        html.classList.add('dark-mode');
-       icon.classList.remove('fa-moon');
-       icon.classList.add('fa-sun');
      }
-     
-     // Toggle theme on button click
-     toggleButton.addEventListener('click', function() {
-       const isDark = html.classList.toggle('dark-mode');
-       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-       
-       if (isDark) {
-         icon.classList.remove('fa-moon');
-         icon.classList.add('fa-sun');
-       } else {
-         icon.classList.remove('fa-sun');
-         icon.classList.add('fa-moon');
-       }
-     });
    })();
    
-   // Calculate reading time on page load
    document.addEventListener('DOMContentLoaded', function() {
+     // Theme toggle functionality
+     const toggleButton = document.getElementById('theme-toggle');
+     if (toggleButton) {
+       const icon = toggleButton.querySelector('i');
+       const html = document.documentElement;
+       const savedTheme = localStorage.getItem('theme');
+       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+       const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+       
+       // Set initial icon based on current theme
+       if (html.classList.contains('dark-mode') || currentTheme === 'dark') {
+         icon.classList.remove('fa-moon');
+         icon.classList.add('fa-sun');
+       }
+       
+       // Toggle theme on button click
+       toggleButton.addEventListener('click', function() {
+         const isDark = html.classList.toggle('dark-mode');
+         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+         
+         if (isDark) {
+           icon.classList.remove('fa-moon');
+           icon.classList.add('fa-sun');
+         } else {
+           icon.classList.remove('fa-sun');
+           icon.classList.add('fa-moon');
+         }
+       });
+     }
+     
      // Silly hack: Remove template metadata if it appears on page
      const bodyText = document.body.childNodes;
      for (let i = 0; i < bodyText.length; i++) {
@@ -63,6 +71,7 @@ Title: Post Template
        }
      }
      
+     // Calculate reading time
      const postBody = document.querySelector('.post-body');
      const readingTimeSpan = document.querySelector('.post-metadata-item .reading-time');
      
