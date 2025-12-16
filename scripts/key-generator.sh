@@ -309,21 +309,61 @@ if [[ "$KEY_SELECTION" =~ "4" ]] && command -v cosign &> /dev/null; then
     echo -e "\n${BLUE}[Cosign] Generating Cosign key...${NC}"
     
     COSIGN_KEY_PATH="$KEY_DIR/cosign"
+    COSIGN_OK=false
     
     if [ -f "${COSIGN_KEY_PATH}.pub" ]; then
         echo -e "${YELLOW}Cosign key already exists${NC}"
         echo -e "${YELLOW}Overwrite? (y/n)${NC}"
         read -p "> " OVERWRITE
         
-        if [[ "$OVERWRITE" =~ ^[Yy]$ ]]; then
-            cosign generate-key-pair --output-key-prefix "$COSIGN_KEY_PATH"
+        if [[ ! "$OVERWRITE" =~ ^[Yy]$ ]]; then
+            COSIGN_OK=true
+        else
+            while true; do
+                set +e
+                cosign generate-key-pair --output-key-prefix "$COSIGN_KEY_PATH"
+                COSIGN_STATUS=$?
+                set -e
+
+                if [ $COSIGN_STATUS -eq 0 ]; then
+                    COSIGN_OK=true
+                    break
+                fi
+
+                echo -e "${RED}Cosign key generation failed.${NC}"
+                echo -e "${YELLOW}Try again? (y/n)${NC}"
+                read -p "> " TRY_AGAIN
+
+                if [[ ! "$TRY_AGAIN" =~ ^[Yy]$ ]]; then
+                    break
+                fi
+            done
         fi
     else
-        cosign generate-key-pair --output-key-prefix "$COSIGN_KEY_PATH"
+        while true; do
+            set +e
+            cosign generate-key-pair --output-key-prefix "$COSIGN_KEY_PATH"
+            COSIGN_STATUS=$?
+            set -e
+
+            if [ $COSIGN_STATUS -eq 0 ]; then
+                COSIGN_OK=true
+                break
+            fi
+
+            echo -e "${RED}Cosign key generation failed.${NC}"
+            echo -e "${YELLOW}Try again? (y/n)${NC}"
+            read -p "> " TRY_AGAIN
+
+            if [[ ! "$TRY_AGAIN" =~ ^[Yy]$ ]]; then
+                break
+            fi
+        done
     fi
-    
-    COSIGN_KEY=$(cat "${COSIGN_KEY_PATH}.pub")
-    cat >> "$OUTPUT_FILE" << EOF
+
+    if [[ "$COSIGN_OK" == true ]] && [ -f "${COSIGN_KEY_PATH}.pub" ]; then
+        COSIGN_KEY=$(cat "${COSIGN_KEY_PATH}.pub")
+        cat >> "$OUTPUT_FILE" << EOF
 ## Cosign Key
 
 \`\`\`
@@ -333,8 +373,11 @@ $COSIGN_KEY
 ---
 
 EOF
-    echo -e "${GREEN}✓ Cosign key generated${NC}"
-    ((KEYS_GENERATED+=1))
+        echo -e "${GREEN}✓ Cosign key generated${NC}"
+        ((KEYS_GENERATED+=1))
+    else
+        echo -e "${YELLOW}Skipping Cosign key.${NC}"
+    fi
 fi
 
 # 5. Generate Minisign Key
@@ -342,21 +385,61 @@ if [[ "$KEY_SELECTION" =~ "5" ]] && command -v minisign &> /dev/null; then
     echo -e "\n${BLUE}[Minisign] Generating Minisign key...${NC}"
     
     MINISIGN_KEY_PATH="$KEY_DIR/minisign"
+    MINISIGN_OK=false
     
     if [ -f "${MINISIGN_KEY_PATH}.pub" ]; then
         echo -e "${YELLOW}Minisign key already exists${NC}"
         echo -e "${YELLOW}Overwrite? (y/n)${NC}"
         read -p "> " OVERWRITE
         
-        if [[ "$OVERWRITE" =~ ^[Yy]$ ]]; then
-            minisign -G -p "${MINISIGN_KEY_PATH}.pub" -s "${MINISIGN_KEY_PATH}.key"
+        if [[ ! "$OVERWRITE" =~ ^[Yy]$ ]]; then
+            MINISIGN_OK=true
+        else
+            while true; do
+                set +e
+                minisign -G -p "${MINISIGN_KEY_PATH}.pub" -s "${MINISIGN_KEY_PATH}.key"
+                MINISIGN_STATUS=$?
+                set -e
+
+                if [ $MINISIGN_STATUS -eq 0 ]; then
+                    MINISIGN_OK=true
+                    break
+                fi
+
+                echo -e "${RED}Minisign key generation failed.${NC}"
+                echo -e "${YELLOW}Try again? (y/n)${NC}"
+                read -p "> " TRY_AGAIN
+
+                if [[ ! "$TRY_AGAIN" =~ ^[Yy]$ ]]; then
+                    break
+                fi
+            done
         fi
     else
-        minisign -G -p "${MINISIGN_KEY_PATH}.pub" -s "${MINISIGN_KEY_PATH}.key"
+        while true; do
+            set +e
+            minisign -G -p "${MINISIGN_KEY_PATH}.pub" -s "${MINISIGN_KEY_PATH}.key"
+            MINISIGN_STATUS=$?
+            set -e
+
+            if [ $MINISIGN_STATUS -eq 0 ]; then
+                MINISIGN_OK=true
+                break
+            fi
+
+            echo -e "${RED}Minisign key generation failed.${NC}"
+            echo -e "${YELLOW}Try again? (y/n)${NC}"
+            read -p "> " TRY_AGAIN
+
+            if [[ ! "$TRY_AGAIN" =~ ^[Yy]$ ]]; then
+                break
+            fi
+        done
     fi
-    
-    MINISIGN_KEY=$(cat "${MINISIGN_KEY_PATH}.pub")
-    cat >> "$OUTPUT_FILE" << EOF
+
+    if [[ "$MINISIGN_OK" == true ]] && [ -f "${MINISIGN_KEY_PATH}.pub" ]; then
+        MINISIGN_KEY=$(cat "${MINISIGN_KEY_PATH}.pub")
+        cat >> "$OUTPUT_FILE" << EOF
 ## Minisign Key
 
 \`\`\`
@@ -366,8 +449,11 @@ $MINISIGN_KEY
 ---
 
 EOF
-    echo -e "${GREEN}✓ Minisign key generated${NC}"
-    ((KEYS_GENERATED+=1))
+        echo -e "${GREEN}✓ Minisign key generated${NC}"
+        ((KEYS_GENERATED+=1))
+    else
+        echo -e "${YELLOW}Skipping Minisign key.${NC}"
+    fi
 fi
 
 # Add important notes
