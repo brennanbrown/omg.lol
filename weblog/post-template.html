@@ -17,6 +17,30 @@ Title: Post Template
  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
  <link rel="stylesheet" href="https://brennan.paste.lol/stylesheet.css/raw">
  {feeds}
+ <script>
+   // Calculate reading time on page load
+   document.addEventListener('DOMContentLoaded', function() {
+     const postBody = document.querySelector('.post-body');
+     const readingTimeSpan = document.querySelector('.post-metadata-item .reading-time');
+     
+     if (postBody && readingTimeSpan) {
+       const text = postBody.innerText || postBody.textContent;
+       const wordCount = text.trim().split(/\s+/).length;
+       const readingTime = Math.ceil(wordCount / 200); // 200 words per minute
+       readingTimeSpan.textContent = readingTime + ' min read';
+     }
+     
+     // Style first word instead of first letter
+     const firstParagraph = document.querySelector('.post-body > p:first-of-type');
+     if (firstParagraph) {
+       const text = firstParagraph.innerHTML;
+       const firstWord = text.match(/^([\w]+)/); // Match first word
+       if (firstWord) {
+         firstParagraph.innerHTML = text.replace(firstWord[0], '<span class="drop-cap-word">' + firstWord[0] + '</span>');
+       }
+     }
+   });
+ </script>
  </head>
  <body>
  
@@ -40,9 +64,9 @@ Title: Post Template
  						<time datetime="{post-date}">{date}</time>
  					</div>
  					<div class="post-metadata-item">
- 						<i class="fa-regular fa-clock"></i>
- 						<span>{reading-time}</span>
- 					</div>
+						<i class="fa-regular fa-clock"></i>
+						<span class="reading-time">Calculating...</span>
+					</div>
  				</div>
  			</header>
  			

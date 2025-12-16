@@ -422,13 +422,12 @@ h1, h2, h3, h4, h5, h6 {
 	text-justify: inter-word;
 }
 
-.post-body > p:first-of-type::first-letter {
-	font-size: 3.5em;
-	line-height: 0.85;
-	float: left;
-	margin: 0.1em 0.1em 0 0;
+.drop-cap-word {
+	font-size: 2em;
+	line-height: 1;
 	font-weight: 700;
 	color: var(--accent-primary);
+	margin-right: 0.1em;
 }
 
 .post-body h2 {
