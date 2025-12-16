@@ -131,6 +131,8 @@ pre {
 	border-radius: 8px;
 	margin: 1.5rem 0;
 	max-width: 100%;
+	width: 100%;
+	box-sizing: border-box;
 	word-wrap: normal;
 	white-space: pre;
 }
@@ -347,6 +349,10 @@ h1, h2, h3, h4, h5, h6 {
 	display: grid;
 	grid-template-columns: 7fr 3fr;
 	gap: 2rem;
+}
+
+.content {
+	min-width: 0;
 }
 
 @media (max-width: 768px) {
