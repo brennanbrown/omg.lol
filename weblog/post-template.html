@@ -1,52 +1,153 @@
 Type: Template
 Title: Post Template
 
-<article>
-	<header class="post-header">
-		<h1>{post-title}</h1>
-		<div class="post-metadata">
-			<div class="post-metadata-item">
-				<i class="fa-regular fa-calendar"></i>
-				<time datetime="{post-date}">{date}</time>
-			</div>
-			<div class="post-metadata-item">
-				<i class="fa-regular fa-clock"></i>
-				<span class="reading-time">Calculating...</span>
-			</div>
-		</div>
-	</header>
-	
-	<div class="post-body">
-		{body}
-	</div>
-	
-	<footer class="post-footer">
-		<div class="post-tags">{tags}</div>
-	</footer>
-</article>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{weblog-title}{separator}{post-title}</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="{post-title} - {weblog-title}">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+ <link rel="preconnect" href="https://brennan.paste.lol">
+ <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Public+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+ <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+ <link rel="stylesheet" href="https://brennan.paste.lol/stylesheet.css/raw">
+ {feeds}
+ <script>
+   // Calculate reading time on page load
+   document.addEventListener('DOMContentLoaded', function() {
+     const postBody = document.querySelector('.post-body');
+     const readingTimeSpan = document.querySelector('.post-metadata-item .reading-time');
+     
+     if (postBody && readingTimeSpan) {
+       const text = postBody.innerText || postBody.textContent;
+       const wordCount = text.trim().split(/\s+/).length;
+       const readingTime = Math.ceil(wordCount / 200); // 200 words per minute
+       readingTimeSpan.textContent = readingTime + ' min read';
+     }
+     
+     // Style first word instead of first letter
+     const firstParagraph = document.querySelector('.post-body > p:first-of-type');
+     if (firstParagraph) {
+       const text = firstParagraph.innerHTML;
+       const firstWord = text.match(/^([\w]+)/); // Match first word
+       if (firstWord) {
+         firstParagraph.innerHTML = text.replace(firstWord[0], '<span class="drop-cap-word">' + firstWord[0] + '</span>');
+       }
+     }
+   });
+ </script>
+ </head>
+ <body>
+ 
+ <a id="top"></a>
+ 
+ <header class="site-header">
+ 	<div class="site-header-inner">
+		<h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
+ 		<div class="site-nav">{navigation}</div>
+ 	</div>
+ </header>
+ 
+ <div class="site-layout">
+ 	<main class="content">
+ 		<article>
+ 			<header class="post-header">
+ 				<h1>{post-title}</h1>
+ 				<div class="post-metadata">
+ 					<div class="post-metadata-item">
+ 						<i class="fa-regular fa-calendar"></i>
+ 						<time datetime="{post-date}">{date}</time>
+ 					</div>
+ 					<div class="post-metadata-item">
+						<i class="fa-regular fa-clock"></i>
+						<span class="reading-time">Calculating...</span>
+					</div>
+ 				</div>
+ 			</header>
+ 			
+ 			<div class="post-body">
+ 				{body}
+ 			</div>
+ 			
+ 			<footer class="post-footer">
+ 				<div class="post-tags">{tags}</div>
+ 			</footer>
+ 		</article>
 
-<script>
-  // Calculate reading time and style first word
-  document.addEventListener('DOMContentLoaded', function() {
-    const postBody = document.querySelector('.post-body');
-    const readingTimeSpan = document.querySelector('.reading-time');
-    
-    if (postBody && readingTimeSpan) {
-      const text = postBody.innerText || postBody.textContent;
-      const wordCount = text.trim().split(/\s+/).length;
-      const readingTime = Math.ceil(wordCount / 200);
-      readingTimeSpan.textContent = readingTime + ' min read';
-    }
-    
-    const firstParagraph = document.querySelector('.post-body > p:first-of-type');
-    if (firstParagraph) {
-      const text = firstParagraph.innerHTML;
-      const firstWord = text.match(/^([\w]+)/);
-      if (firstWord) {
-        firstParagraph.innerHTML = text.replace(firstWord[0], '<span class="drop-cap-word">' + firstWord[0] + '</span>');
-      }
-    }
-  });
-</script>
+ 		<hr>
 
-<span class="divider"></span>
+ 		<h2>Recent Posts</h2>
+ 		{recent-posts}
+ 	</main>
+ 
+ 	<aside class="sidebar">
+ 		<section class="module">
+ 			<h2>About</h2>
+ 			<p><strong>Brennan Kenneth Brown</strong></p>
+ 			<p>Essays, poetry, and musings on writing, technology, and the human experience.</p>
+ 			<p>→ <a href="https://brennanbrown.ca">More about me</a></p>
+ 		</section>
+
+ 		<section class="module">
+ 			<h2>Blogroll</h2>
+ 			<ul>
+ 				<li><a href="https://brennanbrown.ca">Main site</a></li>
+ 				<li><a href="https://berryhouse.ca">Berry House</a></li>
+ 				<li><a href="https://writeclub.ca">Write Club</a></li>
+ 				<li><a href="https://blog.brennanbrown.ca">Medium</a></li>
+ 				<li><a href="https://github.com/brennanbrown">GitHub</a></li>
+ 			</ul>
+ 		</section>
+
+ 		<section class="module">
+ 			<h2>Webrings</h2>
+ 			<p class="meta">Add your webring prev/next links here.</p>
+ 		</section>
+ 
+ 		<section class="module">
+ 			<h2>Support</h2>
+ 			<p>Enjoy this content? Help keep it going:</p>
+ 			<ul>
+ 				<li>[♥] <a href="https://patreon.com/brennankbrown">Patreon</a></li>
+ 			</ul>
+ 		</section>
+
+ 		<section class="module">
+ 			<h2>Site Stats</h2>
+ 			<p class="meta">Posts: {post-count}</p>
+ 		</section>
+
+ 		<section class="module">
+ 			<h2>Badges</h2>
+ 			<div class="badges-grid"></div>
+ 		</section>
+
+ 		<section class="module">
+ 			<h2>Elsewhere</h2>
+ 			<ul>
+ 				<li>[@] <a href="https://me.dm/@brennanbrown">Mastodon</a></li>
+ 				<li>[@] <a href="https://bsky.app/profile/brennanbrown.ca">Bluesky</a></li>
+ 				<li>[@] <a href="mailto:mail@brennanbrown.ca">Email</a></li>
+ 			</ul>
+ 		</section>
+ 	</aside>
+ </div>
+ 
+ <footer class="site-footer">
+ 	<div class="site-footer-inner">
+		<p class="meta">Brennan Kenneth Brown</p>
+		<p class="meta">Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+		<p class="footer-links">Links: <a href="/">Home</a> • <a href="/feed.xml">RSS</a> • <a href="/tags">Tags</a> • <a href="https://github.com/brennanbrown/omg.lol">Source</a> • <a href="/contact">Contact</a></p>
+		<p class="meta">Made with <a href="https://weblog.lol">weblog.lol</a>.</p>
+ 	</div>
+ </footer>
+ 
+ <a class="to-top" href="#top">↑ TOP</a>
+ 
+ </body>
+ </html>
