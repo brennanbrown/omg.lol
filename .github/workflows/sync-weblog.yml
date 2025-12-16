@@ -41,10 +41,3 @@ jobs:
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
             "https://api.omg.lol/address/brennan/weblog/template/page-template" \
             --data-binary "@weblog/page-template.html"
-
-      - name: Sync Post Template
-        run: |
-          curl --fail-with-body --location --request POST \
-            --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-            "https://api.omg.lol/address/brennan/weblog/template/post-template" \
-            --data-binary "@weblog/post-template.html"
