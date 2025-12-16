@@ -1,0 +1,174 @@
+:root {
+	color-scheme: light dark;
+
+	--bg: #fcfcfd;
+	--fg: #111827;
+	--panel: #ffffff;
+	--border: #111827;
+	--muted: #374151;
+
+	--link: #0b5fff;
+	--link-visited: #5b21b6;
+	--link-hover: #0847c5;
+
+	--focus: #b45309;
+	--verified: var(--link);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #0b1020;
+		--fg: #f9fafb;
+		--panel: #111a33;
+		--border: #f9fafb;
+		--muted: #d1d5db;
+
+		--link: #93c5fd;
+		--link-visited: #d8b4fe;
+		--link-hover: #bfdbfe;
+
+		--focus: #f59e0b;
+		--verified: var(--link);
+	}
+}
+
+::selection {
+	background: var(--focus);
+	color: #000;
+}
+
+html,
+body {
+	min-height: 100vh;
+}
+
+body {
+	background: var(--bg);
+	color: var(--fg);
+	padding: 2rem;
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 1.1em;
+	line-height: 1.6;
+}
+
+main {
+	max-width: 42rem;
+	background: var(--panel);
+	border: 2px solid var(--border);
+	border-radius: 0.75rem;
+	padding: 2rem;
+	box-shadow: 0 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.25;
+}
+
+#pronouns,
+#location,
+#occupation,
+#bio,
+#footer {
+	color: var(--muted);
+}
+
+a:link,
+a:visited {
+	color: var(--link);
+	text-decoration: underline;
+	text-decoration-thickness: 0.14em;
+	text-underline-offset: 0.2em;
+	border-bottom: 0;
+}
+
+a:visited {
+	color: var(--link-visited);
+}
+
+a:hover,
+a:active {
+	color: var(--link-hover);
+	text-decoration-thickness: 0.2em;
+	border-bottom: 0;
+}
+
+:focus {
+	outline: none;
+}
+
+:focus-visible {
+	outline: 3px solid var(--focus);
+	outline-offset: 3px;
+	border-radius: 0.25rem;
+}
+
+#profile-picture {
+	border-radius: 0.75rem;
+	border: 2px solid var(--border);
+	height: 8.7em;
+}
+
+h1#name a i.fa-badge-check,
+.omg-verified {
+	color: var(--verified) !important;
+}
+
+hr {
+	background: var(--border);
+	height: 2px;
+	border: 0;
+}
+
+.fa-li,
+.fas,
+.omg-icon,
+.omg-icon path {
+	color: var(--fg);
+	fill: var(--fg);
+	stroke: var(--fg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		scroll-behavior: auto !important;
+		transition: none !important;
+		animation: none !important;
+	}
+}
+
+@media (prefers-contrast: more) {
+	:root {
+		--border: var(--fg);
+		--focus: #ff0000;
+	}
+
+	main {
+		border-width: 3px;
+		box-shadow: none;
+	}
+
+	a:link,
+	a:visited {
+		text-decoration-thickness: 0.2em;
+	}
+}
+
+@media (forced-colors: active) {
+	:root {
+		--bg: Canvas;
+		--fg: CanvasText;
+		--panel: Canvas;
+		--border: CanvasText;
+		--muted: CanvasText;
+		--link: LinkText;
+		--link-visited: VisitedText;
+		--link-hover: LinkText;
+		--focus: Highlight;
+		--verified: LinkText;
+	}
+}
