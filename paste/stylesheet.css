@@ -25,7 +25,6 @@
 	--nav-violet: #b16286;
 }
 
-:root.dark-mode,
 @media (prefers-color-scheme: dark) {
 	:root {
 		--bg: #282828;
@@ -52,6 +51,32 @@
 		--nav-indigo: #8ec07c;
 		--nav-violet: #d3869b;
 	}
+}
+
+:root.dark-mode {
+	--bg: #282828;
+	--panel: #1d2021;
+	--fg: #ebdbb2;
+	--muted: #a89984;
+	--border: #504945;
+
+	--accent-primary: #83a598;
+	--accent-secondary: #fb4934;
+
+	--link: var(--accent-primary);
+	--visited: #d3869b;
+	--link-hover: #b3d7ff;
+
+	--selection-bg: var(--accent-secondary);
+	--selection-fg: #1d2021;
+
+	--nav-red: #fb4934;
+	--nav-orange: #fe8019;
+	--nav-yellow: #fabd2f;
+	--nav-green: #b8bb26;
+	--nav-blue: #83a598;
+	--nav-indigo: #8ec07c;
+	--nav-violet: #d3869b;
 }
 
 * { box-sizing: border-box; }
