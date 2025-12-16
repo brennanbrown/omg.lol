@@ -8,8 +8,6 @@
 
 (This is a [now page](https://nownownow.com/about), and if you have your own site, [you should make one](https://nownownow.com/about), too.)
 
-_Last updated: Testing auto-sync workflows_
-
 ### What I'm reading
 
 - **[The Bell Jar](https://en.wikipedia.org/wiki/The_Bell_Jar)** by Sylvia Plath {book}

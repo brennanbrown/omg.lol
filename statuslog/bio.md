@@ -1,3 +1,3 @@
 # Brennan
 
-Queer Métis writer and web developer. Testing auto-sync workflows.
+Queer Métis writer and web developer based in Calgary, Alberta.
