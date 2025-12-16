@@ -134,7 +134,6 @@ a:visited {
 	text-decoration-thickness: 0.12em;
 	text-underline-offset: 0.2em;
 	text-decoration-color: var(--link);
-	border-bottom: 0;
 	transition: color 140ms ease, text-decoration-thickness 140ms ease, text-decoration-color 140ms ease, transform 80ms ease;
 }
 a:visited { color: var(--visited); }
@@ -143,7 +142,6 @@ a:active {
 	color: var(--link-hover);
 	text-decoration-thickness: 0.18em;
 	text-decoration-color: var(--accent-secondary);
-	border-bottom: 0;
 }
 a:active {
 	transform: translateY(1px);
