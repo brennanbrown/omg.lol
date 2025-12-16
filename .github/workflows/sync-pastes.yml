@@ -1,0 +1,75 @@
+name: Sync Paste Files to omg.lol
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'paste/**'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Sync humans.txt
+        run: |
+          CONTENT=$(cat paste/humans.txt)
+          
+          curl --fail-with-body --location --request POST \
+            --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
+            "https://api.omg.lol/address/brennan/pastebin/" \
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{title: "humans.txt", content: $content}')"
+
+      - name: Sync robots.txt
+        run: |
+          CONTENT=$(cat paste/robots.txt)
+          
+          curl --fail-with-body --location --request POST \
+            --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
+            "https://api.omg.lol/address/brennan/pastebin/" \
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{title: "robots.txt", content: $content}')"
+
+      - name: Sync security.txt
+        run: |
+          CONTENT=$(cat paste/security.txt)
+          
+          curl --fail-with-body --location --request POST \
+            --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
+            "https://api.omg.lol/address/brennan/pastebin/" \
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{title: "security.txt", content: $content}')"
+
+      - name: Sync .plan
+        run: |
+          CONTENT=$(cat paste/.plan)
+          
+          curl --fail-with-body --location --request POST \
+            --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
+            "https://api.omg.lol/address/brennan/pastebin/" \
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{title: ".plan", content: $content}')"
+
+      - name: Sync stylesheet.css
+        run: |
+          CONTENT=$(cat paste/stylesheet.css)
+          
+          curl --fail-with-body --location --request POST \
+            --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
+            "https://api.omg.lol/address/brennan/pastebin/" \
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{title: "stylesheet.css", content: $content}')"
