@@ -14,6 +14,39 @@
  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
  <link rel="stylesheet" href="https://brennan.paste.lol/stylesheet.css/raw">
  {feeds}
+ <script>
+   // Calculate reading time and style first word
+   document.addEventListener('DOMContentLoaded', function() {
+     const article = document.querySelector('main article');
+     if (!article) return;
+     
+     // Add reading time if post body exists
+     const postBody = article.querySelector('.post-body') || article;
+     const postMeta = article.querySelector('.post-meta');
+     
+     if (postBody && postMeta) {
+       const text = postBody.innerText || postBody.textContent;
+       const wordCount = text.trim().split(/\s+/).length;
+       const readingTime = Math.ceil(wordCount / 200);
+       
+       // Add reading time before date
+       const dateP = postMeta.querySelector('p.meta');
+       if (dateP && wordCount > 100) {
+         dateP.innerHTML = '<i class="fa-regular fa-clock"></i> ' + readingTime + ' min read &nbsp;·&nbsp; <i class="fa-regular fa-calendar"></i> ' + dateP.innerHTML;
+       }
+     }
+     
+     // Style first word of first paragraph
+     const firstParagraph = article.querySelector('p:first-of-type');
+     if (firstParagraph && !firstParagraph.classList.contains('meta')) {
+       const text = firstParagraph.innerHTML;
+       const firstWord = text.match(/^([\w]+)/);
+       if (firstWord) {
+         firstParagraph.innerHTML = text.replace(firstWord[0], '<span class="drop-cap-word">' + firstWord[0] + '</span>');
+       }
+     }
+   });
+ </script>
  </head>
  <body>
  
@@ -29,11 +62,15 @@
  <div class="site-layout">
  	<main class="content">
  		<article>
- 			{body}
- 			<div class="post-meta">
- 				<p class="meta" style="margin: 0;">{date}</p>
- 				<div class="post-tags">{tags}</div>
+ 			<div class="post-body">
+ 				{body}
  			</div>
+ 			<footer class="post-footer">
+ 				<div class="post-meta">
+ 					<p class="meta" style="margin: 0 0 0.5rem;">{date}</p>
+ 					<div class="post-tags">{tags}</div>
+ 				</div>
+ 			</footer>
  		</article>
  
  		<hr>
