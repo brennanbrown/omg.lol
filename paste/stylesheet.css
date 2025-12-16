@@ -53,6 +53,32 @@
 	}
 }
 
+:root.light-mode {
+	--bg: #fbf1c7;
+	--panel: #f2e5bc;
+	--fg: #3c3836;
+	--muted: #665c54;
+	--border: #7c6f64;
+
+	--accent-primary: #cc241d;
+	--accent-secondary: #076678;
+
+	--link: var(--accent-primary);
+	--visited: #b16286;
+	--link-hover: #9d0006;
+
+	--selection-bg: #d65d0e;
+	--selection-fg: #fbf1c7;
+
+	--nav-red: #cc241d;
+	--nav-orange: #d65d0e;
+	--nav-yellow: #b57614;
+	--nav-green: #79740e;
+	--nav-blue: #076678;
+	--nav-indigo: #458588;
+	--nav-violet: #b16286;
+}
+
 :root.dark-mode {
 	--bg: #282828;
 	--panel: #1d2021;

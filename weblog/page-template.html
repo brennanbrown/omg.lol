@@ -19,16 +19,20 @@ Title: Page Template
  {feeds}
  <script>
    // Apply saved theme immediately to avoid flash
-   (function() {
-     const html = document.documentElement;
-     const savedTheme = localStorage.getItem('theme');
-     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-     const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-     
-     if (currentTheme === 'dark') {
-       html.classList.add('dark-mode');
-     }
-   })();
+  (function() {
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    
+    if (currentTheme === 'dark') {
+      html.classList.add('dark-mode');
+      html.classList.remove('light-mode');
+    } else {
+      html.classList.add('light-mode');
+      html.classList.remove('dark-mode');
+    }
+  })();
    
    document.addEventListener('DOMContentLoaded', function() {
     console.log('DOMContentLoaded fired');
@@ -58,19 +62,24 @@ Title: Page Template
         console.log('Toggle button clicked!');
         e.preventDefault();
         
-        const isDark = html.classList.toggle('dark-mode');
-        console.log('Toggled to dark mode:', isDark);
-        console.log('HTML classes after toggle:', html.className);
-        
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        const isDark = html.classList.contains('light-mode');
+        console.log('Switching to dark mode:', isDark);
         
         if (isDark) {
+          html.classList.add('dark-mode');
+          html.classList.remove('light-mode');
+          localStorage.setItem('theme', 'dark');
           icon.classList.remove('fa-moon');
           icon.classList.add('fa-sun');
         } else {
+          html.classList.add('light-mode');
+          html.classList.remove('dark-mode');
+          localStorage.setItem('theme', 'light');
           icon.classList.remove('fa-sun');
           icon.classList.add('fa-moon');
         }
+        
+        console.log('HTML classes after toggle:', html.className);
       });
       
       console.log('Theme toggle initialized successfully');
