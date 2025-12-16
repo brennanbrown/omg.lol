@@ -130,9 +130,31 @@ Title: Post Template
  			</div>
  			
  			<footer class="post-footer">
- 				<div class="post-tags">{tags}</div>
- 			</footer>
- 		</article>
+				<div class="post-tags">{tags}</div>
+				
+				<div class="share-buttons">
+					<h3>Share this post</h3>
+					<div class="share-buttons-grid">
+						<a href="https://twitter.com/intent/tweet?text={post-title}&url={post-url}" target="_blank" rel="noopener" class="share-button share-twitter" aria-label="Share on Twitter/X">
+							<i class="fa-brands fa-x-twitter"></i>
+							<span>Twitter/X</span>
+						</a>
+						<a href="https://mastodon.social/share?text={post-title}%20{post-url}" target="_blank" rel="noopener" class="share-button share-mastodon" aria-label="Share on Mastodon">
+							<i class="fa-brands fa-mastodon"></i>
+							<span>Mastodon</span>
+						</a>
+						<a href="mailto:?subject={post-title}&body=Check out this post: {post-url}" class="share-button share-email" aria-label="Share via Email">
+							<i class="fa-solid fa-envelope"></i>
+							<span>Email</span>
+						</a>
+						<button class="share-button share-copy" onclick="navigator.clipboard.writeText('{post-url}').then(() => { this.innerHTML = '<i class=&quot;fa-solid fa-check&quot;></i><span>Copied!</span>'; setTimeout(() => { this.innerHTML = '<i class=&quot;fa-solid fa-link&quot;></i><span>Copy Link</span>'; }, 2000); })" aria-label="Copy link to clipboard">
+							<i class="fa-solid fa-link"></i>
+							<span>Copy Link</span>
+						</button>
+					</div>
+				</div>
+			</footer>
+		</article>
 
  		<hr>
 

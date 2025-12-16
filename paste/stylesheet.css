@@ -522,6 +522,63 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 3rem;
 }
 
+.share-buttons {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--border);
+}
+
+.share-buttons h3 {
+	font-size: 1.1rem;
+	margin: 0 0 1rem 0;
+	font-weight: 700;
+	color: var(--fg);
+}
+
+.share-buttons-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 0.75rem;
+}
+
+.share-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1rem;
+	border: 2px solid var(--border);
+	border-radius: 8px;
+	background: var(--bg);
+	color: var(--fg);
+	text-decoration: none;
+	font-size: 0.9rem;
+	font-weight: 600;
+	font-family: 'Public Sans', sans-serif;
+	transition: all 140ms ease;
+	cursor: pointer;
+}
+
+.share-button:hover {
+	transform: translateY(-2px);
+	border-color: var(--accent-secondary);
+	color: var(--accent-secondary);
+}
+
+.share-button:active {
+	transform: translateY(0);
+}
+
+.share-button i {
+	font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+	.share-buttons-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
 .post-meta {
 	margin-top: 1rem;
 }
