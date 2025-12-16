@@ -24,3 +24,6 @@ node_modules/
 dist/
 .cache/
 .sass-cache/
+
+# Local keys (never commit keys from this folder)
+.keys/
