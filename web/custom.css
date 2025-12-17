@@ -102,16 +102,22 @@ Based on: https://github.com/morhetz/gruvbox
  .metadata,
  #pronouns,
  #location,
- #occupation {
+ #occupation,
+ #birthday,
+ #languages {
 	text-align: center;
  }
 
  .metadata {
-	display: inline-block !important;
-	margin: 0.08rem 0.3rem;
-	padding: 0;
+	display: block !important;
+	margin: 0.5rem auto;
+	padding: 0.4rem 1rem;
 	font-size: 0.95rem;
-	line-height: 1.25;
+	line-height: 1.6;
+	max-width: fit-content;
+	background: var(--bg);
+	border-radius: 0.3rem;
+	border-left: 3px solid var(--border);
  }
 
  #pronouns,
@@ -119,15 +125,33 @@ Based on: https://github.com/morhetz/gruvbox
  #occupation,
  #birthday,
  #languages {
-	display: inline-block !important;
+	display: block !important;
+	margin: 0.5rem auto;
+	padding: 0.4rem 1rem;
+	max-width: fit-content;
+	background: var(--bg);
+	border-radius: 0.3rem;
+	border-left: 3px solid var(--border);
+ }
+
+ #pronouns {
+	border-left-color: var(--muted);
+ }
+
+ #occupation {
+	border-left-color: var(--purple);
+ }
+
+ #location {
+	border-left-color: var(--blue);
  }
 
  #birthday {
-	color: var(--orange);
+	border-left-color: var(--orange);
  }
 
  #languages {
-	color: var(--aqua);
+	border-left-color: var(--aqua);
  }
 
  #recent-writing ul,
@@ -233,9 +257,12 @@ h1#name a i.fa-badge-check, .omg-verified {
  #pronouns,
  #location,
  #occupation,
+ #birthday,
+ #languages,
  #footer {
 	font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-	color: var(--muted);
+	color: var(--fg);
+	font-size: 0.9rem;
  }
 
  .account-grid {
