@@ -5,6 +5,8 @@
 | Pronouns: He/Him
 | Occupation: Writer, Web Developer & Founder of Berry House
 | Location: Mohkinstsis/Calgary (Treaty 7 Territory)
+| Birthday: April 13th, 1996
+| Languages: English and French
 
 --- Bio ---
 

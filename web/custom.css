@@ -74,6 +74,10 @@ Based on: https://github.com/morhetz/gruvbox
 	background: var(--panel);
  }
 
+ main.h-card {
+	text-align: center;
+ }
+
  main.h-card > div[id] {
 	padding-top: 1.25rem;
 	padding-bottom: 0.25rem;
@@ -102,11 +106,19 @@ Based on: https://github.com/morhetz/gruvbox
  }
 
  .metadata {
-	display: inline-block;
-	margin: 0.12rem 0.25rem;
+	display: inline-block !important;
+	margin: 0.08rem 0.3rem;
 	padding: 0;
 	font-size: 0.95rem;
 	line-height: 1.25;
+ }
+
+ #pronouns,
+ #location,
+ #occupation,
+ #birthday,
+ #languages {
+	display: inline-block !important;
  }
 
  #birthday {
