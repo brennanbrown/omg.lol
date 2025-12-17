@@ -109,14 +109,14 @@ Based on: https://github.com/morhetz/gruvbox
  }
 
  .metadata {
-	display: block !important;
-	margin: 0.5rem auto;
-	padding: 0.4rem 1rem;
-	font-size: 0.95rem;
-	line-height: 1.6;
+	display: inline-block !important;
+	margin: 0.25rem 0.35rem;
+	padding: 0.25rem 0.65rem;
+	font-size: 0.8rem;
+	line-height: 1.4;
 	max-width: fit-content;
 	background: var(--bg);
-	border-radius: 0.3rem;
+	border-radius: 0.25rem;
 	border-left: 3px solid var(--border);
  }
 
@@ -125,12 +125,12 @@ Based on: https://github.com/morhetz/gruvbox
  #occupation,
  #birthday,
  #languages {
-	display: block !important;
-	margin: 0.5rem auto;
-	padding: 0.4rem 1rem;
+	display: inline-block !important;
+	margin: 0.25rem 0.35rem;
+	padding: 0.25rem 0.65rem;
 	max-width: fit-content;
 	background: var(--bg);
-	border-radius: 0.3rem;
+	border-radius: 0.25rem;
 	border-left: 3px solid var(--border);
  }
 
@@ -285,7 +285,7 @@ h1#name a i.fa-badge-check, .omg-verified {
  #footer {
 	font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 	color: var(--fg);
-	font-size: 0.9rem;
+	font-size: 0.8rem;
  }
 
  .account-grid {
