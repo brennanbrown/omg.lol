@@ -24,17 +24,17 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 
 <details class="account-card account-omg">
 	<summary>
-		<span class="account-title"><i class="fa-solid fa-sparkles"></i> omg.lol</span>
+		<span class="account-title"><i class="fa-solid fa-laptop"></i> omg.lol</span>
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
-		<li><a href="https://brennan.omg.lol"><i class="fas fa-laptop"></i> omg.lol</a></li>
-		<li><a href="mailto:brennan@omg.lol"><i class="fas fa-envelope"></i> omg.lol email</a></li>
-		<li><a href="https://brennan.day"><i class="fas fa-laptop"></i> weblog.lol</a></li>
-		<li><a href="https://brennan.some.pics/"><i class="fas fa-image"></i> some.pics</a></li>
-		<li><a href="https://brennan.social.lol"><i class="fab fa-mastodon"></i> social.lol</a></li>
-		<li><a href="https://source.tube/brennan"><i class="fas fa-git"></i> source.tube</a></li>
-		<li><a href="https://brennan.paste.lol"><i class="fas fa-paste"></i> paste.lol</a></li>
+		<li><a class="account-link account-link-omg" href="https://brennan.omg.lol"><i class="fas fa-laptop"></i> omg.lol</a></li>
+		<li><a class="account-link account-link-omg-email" href="mailto:brennan@omg.lol"><i class="fas fa-envelope"></i> omg.lol email</a></li>
+		<li><a class="account-link account-link-weblog" href="https://brennan.day"><i class="fas fa-pen-nib"></i> weblog.lol</a></li>
+		<li><a class="account-link account-link-pics" href="https://brennan.some.pics/"><i class="fas fa-image"></i> some.pics</a></li>
+		<li><a class="account-link account-link-social" href="https://brennan.social.lol"><i class="fab fa-mastodon"></i> social.lol</a></li>
+		<li><a class="account-link account-link-source" href="https://source.tube/brennan"><i class="fas fa-code"></i> source.tube</a></li>
+		<li><a class="account-link account-link-paste" href="https://brennan.paste.lol"><i class="fas fa-paste"></i> paste.lol</a></li>
 	</ul>
 </details>
 
@@ -44,15 +44,15 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
-		<li><a href="https://brennanbrown.ca/"><i class="fas fa-globe"></i> Website</a></li>
-		<li><a href="https://berryhouse.ca"><i class="fas fa-briefcase"></i> Berry House</a></li>
-		<li><a href="https://www.linkedin.com/in/brennankennethbrown"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-		<li><a href="https://dev.to/brennan"><i class="fab fa-dev"></i> Dev.to</a></li>
-		<li><a href="https://stackoverflow.com/users/4830756/brennan-k-brown?tab=profile"><i class="fab fa-stack-overflow"></i> Stack Overflow</a></li>
-		<li><a href="https://codepen.io/brennan"><i class="fab fa-codepen"></i> Codepen</a></li>
-		<li><a href="https://www.hackerrank.com/brennan_brown"><i class="fab fa-hackerrank"></i> HackerRank</a></li>
-		<li><a href="https://wakatime.com/@brennan"><i class="fas fa-clock"></i> WakaTime</a></li>
-		<li><a href="https://www.researchgate.net/profile/Brennan-Brown-2"><i class="fab fa-researchgate"></i> ResearchGate</a></li>
+		<li><a class="account-link account-link-website" href="https://brennanbrown.ca/"><i class="fas fa-globe"></i> Website</a></li>
+		<li><a class="account-link account-link-berryhouse" href="https://berryhouse.ca"><i class="fas fa-seedling"></i> Berry House</a></li>
+		<li><a class="account-link account-link-linkedin" href="https://www.linkedin.com/in/brennankennethbrown"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+		<li><a class="account-link account-link-devto" href="https://dev.to/brennan"><i class="fab fa-dev"></i> Dev.to</a></li>
+		<li><a class="account-link account-link-stackoverflow" href="https://stackoverflow.com/users/4830756/brennan-k-brown?tab=profile"><i class="fab fa-stack-overflow"></i> Stack Overflow</a></li>
+		<li><a class="account-link account-link-codepen" href="https://codepen.io/brennan"><i class="fab fa-codepen"></i> Codepen</a></li>
+		<li><a class="account-link account-link-hackerrank" href="https://www.hackerrank.com/brennan_brown"><i class="fab fa-hackerrank"></i> HackerRank</a></li>
+		<li><a class="account-link account-link-wakatime" href="https://wakatime.com/@brennan"><i class="fas fa-clock"></i> WakaTime</a></li>
+		<li><a class="account-link account-link-researchgate" href="https://www.researchgate.net/profile/Brennan-Brown-2"><i class="fab fa-researchgate"></i> ResearchGate</a></li>
 	</ul>
 </details>
 
@@ -62,15 +62,15 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
-		<li><a href="https://www.twitter.com/brennankbrown"><i class="fab fa-twitter-square"></i> Twitter</a></li>
-		<li><a href="https://bsky.app/profile/brennanbrown.ca"><i class="fas fa-cloud"></i> Bluesky</a></li>
-		<li><a href="https://mastodon.social/@brennanbrown"><i class="fab fa-mastodon"></i> Mastodon (mastodon.social)</a></li>
-		<li><a href="https://me.dm/@brennanbrown"><i class="fab fa-mastodon"></i> Mastodon (me.dm)</a></li>
-		<li><a href="https://www.facebook.com/brennankennethbrown"><i class="fab fa-facebook-square"></i> Facebook</a></li>
-		<li><a href="https://www.instagram.com/brennankennethbrown"><i class="fab fa-instagram-square"></i> Instagram</a></li>
-		<li><a href="https://www.reddit.com/user/WanderBetter/"><i class="fab fa-reddit-square"></i> Reddit</a></li>
-		<li><a href="https://discord.com/users/untowards"><i class="fab fa-discord"></i> Discord</a></li>
-		<li><a href="https://keybase.io/brennanbrown"><i class="fab fa-keybase"></i> Keybase</a></li>
+		<li><a class="account-link account-link-twitter" href="https://www.twitter.com/brennankbrown"><i class="fab fa-twitter-square"></i> Twitter</a></li>
+		<li><a class="account-link account-link-bluesky" href="https://bsky.app/profile/brennanbrown.ca"><i class="fas fa-cloud"></i> Bluesky</a></li>
+		<li><a class="account-link account-link-mastodon-social" href="https://mastodon.social/@brennanbrown"><i class="fab fa-mastodon"></i> Mastodon (mastodon.social)</a></li>
+		<li><a class="account-link account-link-mastodon-medm" href="https://me.dm/@brennanbrown"><i class="fab fa-mastodon"></i> Mastodon (me.dm)</a></li>
+		<li><a class="account-link account-link-facebook" href="https://www.facebook.com/brennankbrown"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+		<li><a class="account-link account-link-instagram" href="https://www.instagram.com/brennankbrown"><i class="fab fa-instagram-square"></i> Instagram</a></li>
+		<li><a class="account-link account-link-reddit" href="https://www.reddit.com/user/WanderBetter/"><i class="fab fa-reddit-square"></i> Reddit</a></li>
+		<li><a class="account-link account-link-discord" href="https://discord.com/users/untowards"><i class="fab fa-discord"></i> Discord</a></li>
+		<li><a class="account-link account-link-keybase" href="https://keybase.io/brennanbrown"><i class="fab fa-keybase"></i> Keybase</a></li>
 	</ul>
 </details>
 
@@ -80,12 +80,12 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
-		<li><a href="https://blog.brennanbrown.ca"><i class="fab fa-medium"></i> Medium</a></li>
-		<li><a href="https://bkpoetry.wordpress.com"><i class="fab fa-wordpress"></i> WordPress</a></li>
-		<li><a href="https://bkpoetry.com"><i class="fab fa-tumblr-square"></i> Tumblr</a></li>
-		<li><a href="https://bren.svbtle.com"><i class="fas fa-pen-fancy"></i> Svbtle</a></li>
-		<li><a href="https://writeclub.ca/authors/kenneth-brown/"><i class="fas fa-feather-alt"></i> WriteClub</a></li>
-		<li><a href="https://750words.com/person/brennan"><i class="fas fa-pencil-alt"></i> 750words</a></li>
+		<li><a class="account-link account-link-medium" href="https://blog.brennanbrown.ca"><i class="fab fa-medium"></i> Medium</a></li>
+		<li><a class="account-link account-link-wordpress" href="https://bkpoetry.wordpress.com"><i class="fab fa-wordpress"></i> WordPress</a></li>
+		<li><a class="account-link account-link-tumblr" href="https://bkpoetry.com"><i class="fab fa-tumblr-square"></i> Tumblr</a></li>
+		<li><a class="account-link account-link-svbtle" href="https://bren.svbtle.com"><i class="fas fa-pen-fancy"></i> Svbtle</a></li>
+		<li><a class="account-link account-link-writeclub" href="https://writeclub.ca/authors/kenneth-brown/"><i class="fas fa-feather-alt"></i> WriteClub</a></li>
+		<li><a class="account-link account-link-750words" href="https://750words.com/person/brennan"><i class="fas fa-pencil-alt"></i> 750words</a></li>
 	</ul>
 </details>
 
@@ -95,13 +95,13 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
-		<li><a href="https://www.goodreads.com/author/show/25134426.Brennan_Kenneth_Brown"><i class="fab fa-goodreads"></i> GoodReads (Author)</a></li>
-		<li><a href="https://app.thestorygraph.com/profile/brennanbrown"><i class="fas fa-book-open"></i> The StoryGraph</a></li>
-		<li><a href="https://letterboxd.com/bkennethbrown/"><i class="fas fa-film"></i> Letterboxd</a></li>
-		<li><a href="https://augustin.bandcamp.com"><i class="fab fa-bandcamp"></i> Bandcamp</a></li>
-		<li><a href="https://lichess.org/@/BrennanBrown"><i class="fas fa-chess"></i> Lichess</a></li>
-		<li><a href="https://www.twitch.tv/kenkip"><i class="fab fa-twitch"></i> Twitch</a></li>
-		<li><a href="https://qvl.deviantart.com"><i class="fab fa-deviantart"></i> DeviantArt</a></li>
+		<li><a class="account-link account-link-goodreads" href="https://www.goodreads.com/author/show/25134426.Brennan_Kenneth_Brown"><i class="fab fa-goodreads"></i> GoodReads (Author)</a></li>
+		<li><a class="account-link account-link-storygraph" href="https://app.thestorygraph.com/profile/brennanbrown"><i class="fas fa-book-open"></i> The StoryGraph</a></li>
+		<li><a class="account-link account-link-letterboxd" href="https://letterboxd.com/bkennethbrown/"><i class="fas fa-film"></i> Letterboxd</a></li>
+		<li><a class="account-link account-link-bandcamp" href="https://augustin.bandcamp.com"><i class="fab fa-bandcamp"></i> Bandcamp</a></li>
+		<li><a class="account-link account-link-lichess" href="https://lichess.org/@/BrennanBrown"><i class="fas fa-chess"></i> Lichess</a></li>
+		<li><a class="account-link account-link-twitch" href="https://www.twitch.tv/kenkip"><i class="fab fa-twitch"></i> Twitch</a></li>
+		<li><a class="account-link account-link-deviantart" href="https://qvl.deviantart.com"><i class="fab fa-deviantart"></i> DeviantArt</a></li>
 	</ul>
 </details>
 
@@ -111,8 +111,8 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
-		<li><a href="https://www.duolingo.com/profile/brennankbrown"><i class="fas fa-language"></i> Duolingo</a></li>
-		<li><a href="https://www.clozemaster.com/players/brennanbrown"><i class="fas fa-graduation-cap"></i> Clozemaster</a></li>
+		<li><a class="account-link account-link-duolingo" href="https://www.duolingo.com/profile/brennankbrown"><i class="fas fa-language"></i> Duolingo</a></li>
+		<li><a class="account-link account-link-clozemaster" href="https://www.clozemaster.com/players/brennanbrown"><i class="fas fa-graduation-cap"></i> Clozemaster</a></li>
 	</ul>
 </details>
 
@@ -122,9 +122,9 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
-		<li><a href="https://beeminder.com/brennanbrown"><i class="fas fa-chart-line"></i> Beeminder</a></li>
-		<li><a href="https://trello.com/b/pmphGyWR/personal-inventory"><i class="fab fa-trello"></i> Trello</a></li>
-		<li><a href="https://www.meetup.com/members/231972720/"><i class="fab fa-meetup"></i> Meetup</a></li>
+		<li><a class="account-link account-link-beeminder" href="https://beeminder.com/brennanbrown"><i class="fas fa-chart-line"></i> Beeminder</a></li>
+		<li><a class="account-link account-link-trello" href="https://trello.com/b/pmphGyWR/personal-inventory"><i class="fab fa-trello"></i> Trello</a></li>
+		<li><a class="account-link account-link-meetup" href="https://www.meetup.com/members/231972720/"><i class="fab fa-meetup"></i> Meetup</a></li>
 	</ul>
 </details>
 
@@ -134,7 +134,7 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
-		<li><a href="mailto:mail@brennanbrown.ca"><i class="fas fa-envelope"></i> Email</a></li>
+		<li><a class="account-link account-link-email" href="mailto:mail@brennanbrown.ca"><i class="fas fa-envelope"></i> Email</a></li>
 	</ul>
 </details>
 </div>
@@ -147,13 +147,7 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 - [In Defence of Rupi Kaur: The Necessary, Complicated Legacy of Canada’s Best-selling Poet](https://blog.brennanbrown.ca/in-defence-of-rupi-kaur-34e15860daa7?sk=63784359dc2fbc6044ee5d17dde77acd)
 - [We’ve Known About Thomas King for Over Ten Years](https://blog.brennanbrown.ca/weve-known-about-thomas-king-for-over-ten-years-19ce48be8a9f?sk=781136183c4cbeee32eb426a8e6612b8)
 
-✍️ **Current Poetry Collection:** *Poetics of Grace* (on Tumblr)
 
---- Contact ---
-
-📧 Email: mail@brennanbrown.ca
-
-💼 Berry House: hi@berryhouse.ca
 
 --- Public keys ---
 
