@@ -74,6 +74,20 @@ Based on: https://github.com/morhetz/gruvbox
 	background: var(--panel);
  }
 
+ main.h-card > div[id] {
+	padding-top: 1.25rem;
+	padding-bottom: 0.25rem;
+ }
+
+ main.h-card > div[id] + div[id] {
+	border-top: 2px dashed color-mix(in srgb, var(--border) 70%, transparent);
+	margin-top: 1.25rem;
+ }
+
+ main.h-card > div[id] + div[id] > :first-child {
+	margin-top: 0;
+ }
+
  #profile-picture {
 	display: block;
 	margin-left: auto;
@@ -85,6 +99,23 @@ Based on: https://github.com/morhetz/gruvbox
  #location,
  #occupation {
 	text-align: center;
+ }
+
+ #recent-writing ul,
+ #public-keys ul,
+ #values ul,
+ #recent-writing ol,
+ #public-keys ol,
+ #values ol {
+	max-width: 34rem;
+	margin-left: auto;
+	margin-right: auto;
+ }
+
+ #recent-writing li,
+ #public-keys li,
+ #values li {
+	text-align: left;
  }
 
  main.h-card ul.fa-ul {
