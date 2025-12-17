@@ -74,6 +74,19 @@ Based on: https://github.com/morhetz/gruvbox
 	background: var(--panel);
  }
 
+ #profile-picture {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+ }
+
+ .metadata,
+ #pronouns,
+ #location,
+ #occupation {
+	text-align: center;
+ }
+
  ::selection {
 	background: var(--selection-bg);
 	color: var(--selection-fg);
@@ -161,17 +174,21 @@ h1#name a i.fa-badge-check, .omg-verified {
 	grid-template-columns: 1fr;
 	gap: 0.9rem;
 	margin: 1.1rem 0 1.4rem;
+	justify-items: center;
  }
 
  .account-card {
+	box-sizing: border-box;
 	border: 1px solid var(--border);
 	border-left: 0.35rem solid var(--border);
 	border-radius: 0.6rem;
 	background: var(--panel);
 	overflow: clip;
+	width: 100%;
  }
 
  .account-card > summary {
+	box-sizing: border-box;
 	cursor: pointer;
 	list-style: none;
 	display: flex;
@@ -207,6 +224,7 @@ h1#name a i.fa-badge-check, .omg-verified {
  }
 
  .account-list {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0 1rem 0.95rem;
 	list-style: none;
