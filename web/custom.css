@@ -180,11 +180,21 @@ h1#name a i.fa-badge-check, .omg-verified {
  .account-card {
 	box-sizing: border-box;
 	border: 1px solid var(--border);
-	border-left: 0.35rem solid var(--border);
 	border-radius: 0.6rem;
 	background: var(--panel);
 	overflow: clip;
 	width: 100%;
+	position: relative;
+ }
+
+ .account-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 0.35rem;
+	background: var(--border);
  }
 
  .account-card > summary {
@@ -246,14 +256,14 @@ h1#name a i.fa-badge-check, .omg-verified {
 	text-decoration: underline;
  }
 
- .account-card.account-omg { border-left-color: var(--yellow); }
- .account-card.account-pro { border-left-color: var(--blue); }
- .account-card.account-social { border-left-color: var(--purple); }
- .account-card.account-writing { border-left-color: var(--orange); }
- .account-card.account-hobbies { border-left-color: var(--red); }
- .account-card.account-learning { border-left-color: var(--green); }
- .account-card.account-tools { border-left-color: var(--aqua); }
- .account-card.account-contact { border-left-color: var(--muted); }
+ .account-card.account-omg::before { background: var(--yellow); }
+ .account-card.account-pro::before { background: var(--blue); }
+ .account-card.account-social::before { background: var(--purple); }
+ .account-card.account-writing::before { background: var(--orange); }
+ .account-card.account-hobbies::before { background: var(--red); }
+ .account-card.account-learning::before { background: var(--green); }
+ .account-card.account-tools::before { background: var(--aqua); }
+ .account-card.account-contact::before { background: var(--muted); }
 
  @media (prefers-reduced-motion: reduce) {
 	* {
