@@ -40,7 +40,7 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 
 <details class="account-card account-pro">
 	<summary>
-		<span class="account-title"><i class="fa-solid fa-briefcase"></i> Professional &amp; development</span>
+		<span class="account-title"><i class="fa-solid fa-briefcase"></i> Professional &amp; Development</span>
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
@@ -58,7 +58,7 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 
 <details class="account-card account-social">
 	<summary>
-		<span class="account-title"><i class="fa-solid fa-users"></i> Social media</span>
+		<span class="account-title"><i class="fa-solid fa-users"></i> Social Media</span>
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
@@ -76,7 +76,7 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 
 <details class="account-card account-writing">
 	<summary>
-		<span class="account-title"><i class="fa-solid fa-pen-nib"></i> Content &amp; writing</span>
+		<span class="account-title"><i class="fa-solid fa-pen-nib"></i> Content &amp; Writing</span>
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
@@ -91,7 +91,7 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 
 <details class="account-card account-hobbies">
 	<summary>
-		<span class="account-title"><i class="fa-solid fa-headphones"></i> Entertainment &amp; hobbies</span>
+		<span class="account-title"><i class="fa-solid fa-headphones"></i> Entertainment &amp; Hobbies</span>
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
@@ -107,7 +107,7 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 
 <details class="account-card account-learning">
 	<summary>
-		<span class="account-title"><i class="fa-solid fa-graduation-cap"></i> Learning &amp; education</span>
+		<span class="account-title"><i class="fa-solid fa-graduation-cap"></i> Learning &amp; Education</span>
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">
@@ -118,7 +118,7 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 
 <details class="account-card account-tools">
 	<summary>
-		<span class="account-title"><i class="fa-solid fa-screwdriver-wrench"></i> Productivity &amp; tools</span>
+		<span class="account-title"><i class="fa-solid fa-screwdriver-wrench"></i> Productivity &amp; Tools</span>
 		<i class="fa-solid fa-chevron-down account-chevron" aria-hidden="true"></i>
 	</summary>
 	<ul class="account-list">

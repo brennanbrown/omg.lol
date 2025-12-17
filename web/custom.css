@@ -233,6 +233,19 @@ h1#name a i.fa-badge-check, .omg-verified {
 	text-align: left;
  }
 
+ .account-card > summary .account-title i {
+	color: var(--border);
+ }
+
+ .account-card.account-omg > summary .account-title i { color: var(--yellow); }
+ .account-card.account-pro > summary .account-title i { color: var(--blue); }
+ .account-card.account-social > summary .account-title i { color: var(--purple); }
+ .account-card.account-writing > summary .account-title i { color: var(--orange); }
+ .account-card.account-hobbies > summary .account-title i { color: var(--red); }
+ .account-card.account-learning > summary .account-title i { color: var(--green); }
+ .account-card.account-tools > summary .account-title i { color: var(--aqua); }
+ .account-card.account-contact > summary .account-title i { color: var(--muted); }
+
  .account-chevron {
 	color: var(--muted);
 	transition: transform 150ms ease;
