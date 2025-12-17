@@ -156,6 +156,91 @@ h1#name a i.fa-badge-check, .omg-verified {
 	color: var(--muted);
  }
 
+ .account-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.8rem;
+	margin: 1rem 0 1.25rem;
+ }
+
+ @media (min-width: 640px) {
+	.account-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+ }
+
+ .account-card {
+	border: 1px solid var(--border);
+	border-left: 0.35rem solid var(--border);
+	border-radius: 0.6rem;
+	background: color-mix(in srgb, var(--panel) 92%, var(--bg));
+	overflow: clip;
+ }
+
+ .account-card > summary {
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	padding: 0.8rem 0.9rem;
+	font-family: 'Public Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+	font-weight: 800;
+	color: var(--foreground);
+ }
+
+ .account-card > summary::-webkit-details-marker {
+	display: none;
+ }
+
+ .account-title {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-align: left;
+ }
+
+ .account-chevron {
+	color: var(--muted);
+	transition: transform 150ms ease;
+ }
+
+ details[open] > summary .account-chevron {
+	transform: rotate(180deg);
+ }
+
+ .account-list {
+	margin: 0;
+	padding: 0 0.9rem 0.9rem;
+	list-style: none;
+ }
+
+ .account-list li {
+	text-align: left;
+	margin: 0.35rem 0;
+ }
+
+ .account-list a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-decoration: none;
+ }
+
+ .account-list a:hover {
+	text-decoration: underline;
+ }
+
+ .account-card.account-omg { border-left-color: var(--yellow); }
+ .account-card.account-pro { border-left-color: var(--blue); }
+ .account-card.account-social { border-left-color: var(--purple); }
+ .account-card.account-writing { border-left-color: var(--orange); }
+ .account-card.account-hobbies { border-left-color: var(--red); }
+ .account-card.account-learning { border-left-color: var(--green); }
+ .account-card.account-tools { border-left-color: var(--aqua); }
+ .account-card.account-contact { border-left-color: var(--muted); }
+
  @media (prefers-reduced-motion: reduce) {
 	* {
 		transition: none !important;
