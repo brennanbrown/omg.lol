@@ -10,7 +10,7 @@
 
 --- Bio ---
 
-Hi there! I'm Brennan, but my friends call me Kenny. I'm a Queer Métis writer, web developer, and the founder of [**Berry House**](https://berryhouse.ca), a small, values-driven studio building fast, accessible JAMstack websites for the independent web.
+Hello there! I'm Brennan, but my friends call me Kenny. I'm a Queer Métis writer, web developer, and the founder of [**Berry House**](https://berryhouse.ca), a small, values-driven studio building fast, accessible JAMstack websites for the independent web.
 
 I recently graduated with my BA in English (Honours) from Mount Royal University (3.8 GPA) and I've been writing for half my life. Poetry, essays, fiction, and everything in between. I'm the author of nine published books and I've been contributing to [Medium](https://blog.brennanbrown.ca) for a decade, where I write about everything from Indigenous literature to productivity systems to the ethics of AI.
 
@@ -18,7 +18,7 @@ I'm also the founder and former president of [**Write Club**](https://writeclub.
 
 I believe in digital autonomy, accessibility, and the IndieWeb. I advocate for calm technology people can own, privacy-respecting analytics, and portable content that outlasts any platform. My work blends editorial expertise with lean engineering, favouring Eleventy, progressive enhancement, and accessibility-first interfaces.
 
-When I'm not writing or coding, I'm probably drinking decaf coffee, listening to Flawed Mangoes, or thinking about how Gen-Z is going to save us all with their dumbphones and iPod revival work.
+When I'm not writing or coding, I'm probably drinking decaf coffee, listening to Flawed Mangoes, and thinking about how Gen-Z is going to save us all with their dumbphones and iPod revival work.
 
 --- Accounts ---
 

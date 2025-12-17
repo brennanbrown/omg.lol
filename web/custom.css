@@ -148,10 +148,12 @@ Based on: https://github.com/morhetz/gruvbox
 
  #birthday {
 	border-left-color: var(--orange);
+	color: var(--orange);
  }
 
  #languages {
 	border-left-color: var(--aqua);
+	color: var(--aqua);
  }
 
  #recent-writing ul,
