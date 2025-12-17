@@ -87,6 +87,15 @@ Based on: https://github.com/morhetz/gruvbox
 	text-align: center;
  }
 
+ main.h-card ul.fa-ul {
+	margin-left: 0;
+	padding-left: 0;
+ }
+
+ main.h-card ul.fa-ul > li {
+	padding-left: 0;
+ }
+
  ::selection {
 	background: var(--selection-bg);
 	color: var(--selection-fg);
