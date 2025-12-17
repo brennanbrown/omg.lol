@@ -81,6 +81,7 @@ Based on: https://github.com/morhetz/gruvbox
  main.h-card > div[id] {
 	padding-top: 1.25rem;
 	padding-bottom: 0.25rem;
+	text-align: left;
  }
 
  main.h-card > div[id] + div[id] {
