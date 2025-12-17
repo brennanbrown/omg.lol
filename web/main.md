@@ -149,9 +149,9 @@ When I'm not writing or coding, I'm probably drinking decaf coffee, listening to
 
 
 
---- Public keys ---
+--- Public Keys ---
 
-## Public keys
+## Public Keys
  
 - {pgp-key}
 - {ssh-key}

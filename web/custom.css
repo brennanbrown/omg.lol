@@ -101,6 +101,28 @@ Based on: https://github.com/morhetz/gruvbox
 	text-align: center;
  }
 
+ .metadata {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35rem;
+	margin: 0.2rem 0.35rem;
+	padding: 0.2rem 0.55rem;
+	border: 1px dashed color-mix(in srgb, var(--border) 70%, transparent);
+	border-radius: 999px;
+	font-size: 0.95rem;
+	line-height: 1.2;
+	background: color-mix(in srgb, var(--panel) 88%, var(--bg));
+ }
+
+ #birthday {
+	color: var(--orange);
+ }
+
+ #languages {
+	color: var(--aqua);
+ }
+
  #recent-writing ul,
  #public-keys ul,
  #values ul,
