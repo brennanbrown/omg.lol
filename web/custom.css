@@ -293,7 +293,7 @@ h1#name a i.fa-badge-check, .omg-verified {
  .account-link-linkedin { color: #0a66c2 !important; }
  .account-link-devto { color: var(--foreground) !important; }
  .account-link-stackoverflow { color: #f48024 !important; }
- .account-link-codepen { color: #111111 !important; }
+ .account-link-codepen { color: var(--link) !important; }
  .account-link-hackerrank { color: #00ea64 !important; }
  .account-link-wakatime { color: #7a3ff2 !important; }
  .account-link-researchgate { color: #00ccbb !important; }
@@ -315,7 +315,7 @@ h1#name a i.fa-badge-check, .omg-verified {
  .account-link-writeclub { color: var(--purple) !important; }
  .account-link-750words { color: var(--orange) !important; }
 
- .account-link-goodreads { color: #372213 !important; }
+ .account-link-goodreads { color: var(--yellow) !important; }
  .account-link-storygraph { color: #19a974 !important; }
  .account-link-letterboxd { color: #00d735 !important; }
  .account-link-bandcamp { color: #629aa9 !important; }
@@ -324,7 +324,7 @@ h1#name a i.fa-badge-check, .omg-verified {
  .account-link-deviantart { color: #05cc47 !important; }
 
  .account-link-duolingo { color: #58cc02 !important; }
- .account-link-clozemaster { color: #1e3a8a !important; }
+ .account-link-clozemaster { color: #2563eb !important; }
 
  .account-link-beeminder { color: #f7b500 !important; }
  .account-link-trello { color: #0052cc !important; }
