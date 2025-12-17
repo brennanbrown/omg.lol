@@ -159,21 +159,15 @@ h1#name a i.fa-badge-check, .omg-verified {
  .account-grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 0.8rem;
-	margin: 1rem 0 1.25rem;
- }
-
- @media (min-width: 640px) {
-	.account-grid {
-		grid-template-columns: 1fr 1fr;
-	}
+	gap: 0.9rem;
+	margin: 1.1rem 0 1.4rem;
  }
 
  .account-card {
 	border: 1px solid var(--border);
 	border-left: 0.35rem solid var(--border);
 	border-radius: 0.6rem;
-	background: color-mix(in srgb, var(--panel) 92%, var(--bg));
+	background: var(--panel);
 	overflow: clip;
  }
 
@@ -184,10 +178,12 @@ h1#name a i.fa-badge-check, .omg-verified {
 	align-items: center;
 	justify-content: space-between;
 	gap: 0.75rem;
-	padding: 0.8rem 0.9rem;
+	padding: 0.9rem 1rem;
 	font-family: 'Public Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 	font-weight: 800;
 	color: var(--foreground);
+	text-align: left;
+	line-height: 1.2;
  }
 
  .account-card > summary::-webkit-details-marker {
@@ -212,13 +208,13 @@ h1#name a i.fa-badge-check, .omg-verified {
 
  .account-list {
 	margin: 0;
-	padding: 0 0.9rem 0.9rem;
+	padding: 0 1rem 0.95rem;
 	list-style: none;
  }
 
  .account-list li {
 	text-align: left;
-	margin: 0.35rem 0;
+	margin: 0.4rem 0;
  }
 
  .account-list a {
