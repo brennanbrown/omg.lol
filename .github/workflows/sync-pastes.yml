@@ -5,6 +5,7 @@ on:
     branches: [main, master]
     paths:
       - 'paste/**'
+      - 'weblog/weblog.css'
   workflow_dispatch:
 
 jobs:
@@ -73,3 +74,15 @@ jobs:
             --data "$(jq -n \
               --arg content "$CONTENT" \
               '{title: "stylesheet.css", content: $content}')"
+
+      - name: Sync weblog.css
+        run: |
+          CONTENT=$(cat weblog/weblog.css)
+          
+          curl --fail-with-body --location --request POST \
+            --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
+            "https://api.omg.lol/address/brennan/pastebin/" \
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{title: "weblog.css", content: $content}')"
