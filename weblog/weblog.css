@@ -113,6 +113,7 @@ header nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: nowrap;
 }
 
 .nav-left a {
@@ -125,6 +126,8 @@ header nav {
 .nav-right {
 	display: flex;
 	gap: 1.5rem;
+	flex-wrap: nowrap;
+	align-items: center;
 }
 
 .nav-right a {
