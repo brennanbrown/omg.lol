@@ -1,55 +1,474 @@
-/* Import EB Garamond from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+/*
+Theme: gruvbox dark (modified)
+Author: Jordan Warne (jw.omg.lol)
+License: Public domain
+Version: 1.0
+Description: Retro groove color scheme
+Based on: https://github.com/morhetz/gruvbox
+*/
 
-/* Apply EB Garamond to all elements */
-* {
-  font-family: 'EB Garamond', serif;
+:root {
+	color-scheme: light dark;
+	--bg: #fbf1c7;
+	--panel: #f2e5bc;
+	--fg: #3c3836;
+	--muted: #665c54;
+	--border: #7c6f64;
+
+	--accent-primary: #cc241d;
+	--accent-secondary: #076678;
+
+	--link: var(--accent-primary);
+	--link-hover: #9d0006;
+	--link-visited: #b16286;
+
+	--selection-bg: #d65d0e;
+	--selection-fg: #fbf1c7;
+
+	--external-background: var(--bg);
+	--internal-background: var(--panel);
+	--foreground: var(--fg);
+	--foreground-light: #282828;
+	--gray: var(--muted);
+	--aqua: #689d6a;
+	--green: #79740e;
+	--orange: #d65d0e;
+	--blue: var(--accent-secondary);
+	--purple: #b16286;
+	--red: var(--accent-primary);
+	--yellow: #b57614;
+ }
+
+ @media (prefers-color-scheme: dark) {
+ 	:root {
+ 		--bg: #282828;
+ 		--panel: #1d2021;
+ 		--fg: #ebdbb2;
+ 		--muted: #a89984;
+ 		--border: #504945;
+
+ 		--accent-primary: #83a598;
+ 		--accent-secondary: #fb4934;
+
+ 		--link: var(--accent-primary);
+ 		--link-hover: #b3d7ff;
+ 		--link-visited: #d3869b;
+
+ 		--selection-bg: var(--accent-secondary);
+ 		--selection-fg: #1d2021;
+ 	}
+ }
+
+ body {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background: var(--bg);
+	color: var(--fg);
+	font-family: 'EB Garamond', Georgia, serif;
+	font-size: 1.125rem;
+	line-height: 1.7;
+	text-align: left;
+ }
+ 
+ main {
+	background: var(--panel);
+ }
+
+ main.h-card {
+	text-align: center;
+ }
+
+ main.h-card > div[id] {
+	padding-top: 1.25rem;
+	padding-bottom: 0.25rem;
+	text-align: left;
+ }
+
+ main.h-card > div[id] + div[id] {
+	border-top: 2px dashed color-mix(in srgb, var(--border) 70%, transparent);
+	margin-top: 1.25rem;
+ }
+
+ main.h-card > div[id] + div[id] > :first-child {
+	margin-top: 0;
+ }
+
+ #profile-picture {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+ }
+
+ .metadata,
+ #pronouns,
+ #location,
+ #occupation,
+ #birthday,
+ #languages {
+	text-align: center;
+ }
+
+ .metadata {
+	display: inline-block !important;
+	margin: 0.25rem 0.35rem;
+	padding: 0.25rem 0.65rem;
+	font-size: 0.8rem;
+	line-height: 1.4;
+	max-width: fit-content;
+	background: var(--bg);
+	border-radius: 0.25rem;
+	border-left: 3px solid var(--border);
+ }
+
+ #pronouns,
+ #location,
+ #occupation,
+ #birthday,
+ #languages {
+	display: inline-block !important;
+	margin: 0.25rem 0.35rem;
+	padding: 0.25rem 0.65rem;
+	max-width: fit-content;
+	background: var(--bg);
+	border-radius: 0.25rem;
+	border-left: 3px solid var(--border);
+ }
+
+ #pronouns {
+	border-left-color: var(--muted);
+ }
+
+ #occupation {
+	border-left-color: var(--purple);
+ }
+
+ #location {
+	border-left-color: var(--blue);
+ }
+
+ #birthday {
+	border-left-color: var(--orange);
+	color: var(--orange);
+ }
+
+ #languages {
+	border-left-color: var(--aqua);
+	color: var(--aqua);
+ }
+
+ #recent-writing ul,
+ #public-keys ul,
+ #values ul,
+ #recent-writing ol,
+ #public-keys ol,
+ #values ol {
+	max-width: 28rem;
+	margin-left: auto;
+	margin-right: auto;
+ }
+
+ #recent-writing,
+ #public-keys,
+ #values {
+	text-align: center;
+ }
+
+ #recent-writing li,
+ #public-keys li,
+ #values li {
+	text-align: left;
+ }
+
+ main.h-card ul.fa-ul {
+	margin-left: 0;
+	padding-left: 0;
+ }
+
+ main.h-card ul.fa-ul > li {
+	padding-left: 0;
+ }
+
+ ::selection {
+	background: var(--selection-bg);
+	color: var(--selection-fg);
+ }
+
+h1#name a i.fa-badge-check, .omg-verified {
+	color: var(--accent-primary) !important; 
 }
 
-/* Specifically set for common elements */
-body, 
-h1, h2, h3, h4, h5, h6,
-p, li, a, span, div,
-article, aside, section {
-  font-family: 'EB Garamond', serif;
+#pronouns a:link,
+#pronouns a:visited,
+#pronouns a:hover,
+#pronouns a:active, 
+#pronouns {
+	color: var(--muted);
 }
 
-/* Justify body text */
-body {
-  text-align: left;
+ a:link,
+ a:visited {
+ 	color: var(--link);
+ 	text-decoration: underline;
+ 	text-decoration-thickness: 0.12em;
+ 	text-underline-offset: 0.2em;
+ 	text-decoration-color: var(--link);
+ 	border-bottom: 0;
+ 	transition: color 140ms ease, text-decoration-thickness 140ms ease, text-decoration-color 140ms ease, transform 80ms ease;
+ }
+ a:hover,
+ a:active {
+ 	color: var(--link-hover);
+ 	text-decoration-thickness: 0.18em;
+ 	text-decoration-color: var(--accent-secondary);
+ 	border-bottom: 0;
+ }
+
+ a:active {
+	transform: translateY(1px);
+ }
+
+.fa-li {
+	color: var(--gray);
+}
+.fa-location-dot {
+	color: var(--blue);
+}
+.fa-briefcase {
+	color: var(--purple);
+}
+.fa-solid.fa-fw.fa-plug {
+	color: var(--green);
 }
 
-p, 
-article p,
-li {
-  text-align: justify;
-  text-justify: inter-word;
-}
+ #footer > a:nth-child(1), #footer {
+	color: var(--muted);
+ }
 
-/* Keep headings center-aligned */
-h1, h2, h3, h4, h5, h6 {
-  text-align: center;
-}
+ h1, h2, h3, h4, h5, h6 {
+	font-family: 'Public Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+	font-weight: 800;
+	text-align: center;
+ }
 
-/* Optional: Improve readability with these settings */
-body {
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
+ p,
+ article p,
+ li {
+	text-align: justify;
+	text-justify: inter-word;
+	hyphens: auto;
+ }
 
-/* Optional: Style links to match the classic typography */
-a {
-  color: #2c5282;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
+ #bio > p:first-of-type::first-letter {
+	float: left;
+	font-size: 4.5em;
+	line-height: 0.85;
+	margin: 0.05em 0.1em 0 0;
+	font-weight: 700;
+	color: var(--accent-primary);
+	font-family: 'EB Garamond', Georgia, serif;
+ }
 
-a:hover {
-  color: #1a365d;
-}
+ #bio > p:first-of-type::first-line {
+	font-variant: small-caps;
+	letter-spacing: 0.05em;
+	font-weight: 500;
+ }
 
-/* Optional: Style code blocks with a monospace fallback */
-code, pre {
-  font-family: 'Courier New', monospace;
-}
+ code,
+ pre {
+	font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+ }
+
+ #pronouns,
+ #location,
+ #occupation,
+ #birthday,
+ #languages,
+ #footer {
+	font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	color: var(--fg);
+	font-size: 0.8rem;
+ }
+
+ .account-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.9rem;
+	margin: 1.1rem 0 1.4rem;
+	justify-items: center;
+ }
+
+ .account-card {
+	box-sizing: border-box;
+	border: 1px solid var(--border);
+	border-radius: 0.6rem;
+	background: var(--panel);
+	overflow: clip;
+	width: 100%;
+	position: relative;
+ }
+
+ .account-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 0.35rem;
+	background: var(--border);
+ }
+
+ .account-card > summary {
+	box-sizing: border-box;
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	padding: 0.9rem 1rem;
+	font-family: 'Public Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+	font-weight: 800;
+	color: var(--foreground);
+	text-align: left;
+	line-height: 1.2;
+ }
+
+ .account-card > summary::-webkit-details-marker {
+	display: none;
+ }
+
+ .account-title {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-align: left;
+ }
+
+ .account-card > summary .account-title i {
+	color: var(--border);
+ }
+
+ .account-card.account-omg > summary .account-title i { color: var(--yellow); }
+ .account-card.account-pro > summary .account-title i { color: var(--blue); }
+ .account-card.account-social > summary .account-title i { color: var(--purple); }
+ .account-card.account-writing > summary .account-title i { color: var(--orange); }
+ .account-card.account-hobbies > summary .account-title i { color: var(--red); }
+ .account-card.account-learning > summary .account-title i { color: var(--green); }
+ .account-card.account-tools > summary .account-title i { color: var(--aqua); }
+ .account-card.account-contact > summary .account-title i { color: var(--muted); }
+
+ .account-chevron {
+	color: var(--muted);
+	transition: transform 150ms ease;
+ }
+
+ details[open] > summary .account-chevron {
+	transform: rotate(180deg);
+ }
+
+ .account-list {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0 1rem 0.95rem;
+	list-style: none;
+ }
+
+ .account-list li {
+	text-align: left;
+	margin: 0.4rem 0;
+ }
+
+ .account-list a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-decoration: none;
+ }
+
+ .account-list a.account-link,
+ .account-list a.account-link:visited {
+	color: var(--link);
+	text-decoration-color: currentColor;
+ }
+
+ .account-list a.account-link i {
+	color: currentColor;
+ }
+
+ .account-list a.account-link:hover {
+	text-decoration: underline;
+	text-decoration-color: currentColor;
+ }
+
+ .account-list a:hover {
+	text-decoration: underline;
+ }
+
+ .account-link-omg { color: var(--yellow) !important; }
+ .account-link-omg-email { color: var(--orange) !important; }
+ .account-link-weblog { color: var(--red) !important; }
+ .account-link-pics { color: var(--aqua) !important; }
+ .account-link-social { color: var(--purple) !important; }
+ .account-link-source { color: var(--blue) !important; }
+ .account-link-paste { color: var(--muted) !important; }
+
+ .account-link-website { color: var(--blue) !important; }
+ .account-link-berryhouse { color: var(--red) !important; }
+ .account-link-linkedin { color: #0a66c2 !important; }
+ .account-link-devto { color: var(--foreground) !important; }
+ .account-link-stackoverflow { color: #f48024 !important; }
+ .account-link-codepen { color: var(--link) !important; }
+ .account-link-hackerrank { color: #00ea64 !important; }
+ .account-link-wakatime { color: #7a3ff2 !important; }
+ .account-link-researchgate { color: #00ccbb !important; }
+
+ .account-link-twitter { color: #1d9bf0 !important; }
+ .account-link-bluesky { color: #1185fe !important; }
+ .account-link-mastodon-social { color: #6364ff !important; }
+ .account-link-mastodon-medm { color: #6364ff !important; }
+ .account-link-facebook { color: #1877f2 !important; }
+ .account-link-instagram { color: #e4405f !important; }
+ .account-link-reddit { color: #ff4500 !important; }
+ .account-link-discord { color: #5865f2 !important; }
+ .account-link-keybase { color: #33a0ff !important; }
+
+ .account-link-medium { color: var(--foreground) !important; }
+ .account-link-wordpress { color: #21759b !important; }
+ .account-link-tumblr { color: #36465d !important; }
+ .account-link-svbtle { color: var(--muted) !important; }
+ .account-link-writeclub { color: var(--purple) !important; }
+ .account-link-750words { color: var(--orange) !important; }
+
+ .account-link-goodreads { color: var(--yellow) !important; }
+ .account-link-storygraph { color: #19a974 !important; }
+ .account-link-letterboxd { color: #00d735 !important; }
+ .account-link-bandcamp { color: #629aa9 !important; }
+ .account-link-lichess { color: var(--foreground) !important; }
+ .account-link-twitch { color: #9146ff !important; }
+ .account-link-deviantart { color: #05cc47 !important; }
+
+ .account-link-duolingo { color: #58cc02 !important; }
+ .account-link-clozemaster { color: #2563eb !important; }
+
+ .account-link-beeminder { color: #f7b500 !important; }
+ .account-link-trello { color: #0052cc !important; }
+ .account-link-meetup { color: #f64060 !important; }
+
+ .account-link-email { color: var(--orange) !important; }
+
+ .account-card.account-omg::before { background: var(--yellow); }
+ .account-card.account-pro::before { background: var(--blue); }
+ .account-card.account-social::before { background: var(--purple); }
+ .account-card.account-writing::before { background: var(--orange); }
+ .account-card.account-hobbies::before { background: var(--red); }
+ .account-card.account-learning::before { background: var(--green); }
+ .account-card.account-tools::before { background: var(--aqua); }
+ .account-card.account-contact::before { background: var(--muted); }
+
+ @media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+		animation: none !important;
+	}
+ }
