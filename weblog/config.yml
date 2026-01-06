@@ -68,7 +68,6 @@ Multiple posts count: 10
 Multiple posts format: <<[
 <ul class="post-list">
 [post:begin]
-<article>
 <li>
   <h2><a href="$location">$title</a></h2>
   <div class="post-meta"><i class="fa-solid fa-clock"></i> {date}</div>
@@ -76,7 +75,6 @@ Multiple posts format: <<[
   <div class="post-meta"><i class="fa-solid fa-tag"></i> {tags}</div>
 </li>
 [post:end]
-</article>
 </ul>
 ]>>
 

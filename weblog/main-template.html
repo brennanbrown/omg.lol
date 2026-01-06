@@ -1,3 +1,6 @@
+Type: Template
+Title: Main Template
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
