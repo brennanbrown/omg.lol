@@ -27,6 +27,7 @@ jobs:
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
             "https://api.omg.lol/address/brennan/weblog/template/landing-page-template" \
             --data-binary "@weblog/landing-page-template.html"
+          sleep 2
 
       - name: Sync Main Template
         run: |
@@ -34,6 +35,7 @@ jobs:
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
             "https://api.omg.lol/address/brennan/weblog/template/main-template" \
             --data-binary "@weblog/main-template.html"
+          sleep 2
 
       - name: Sync Page Template
         run: |
@@ -41,6 +43,7 @@ jobs:
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
             "https://api.omg.lol/address/brennan/weblog/template/page-template" \
             --data-binary "@weblog/page-template.html"
+          sleep 2
 
       - name: Sync Post Template
         run: |
