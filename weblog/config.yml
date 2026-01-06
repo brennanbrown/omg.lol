@@ -15,7 +15,7 @@ Landing page template: Landing Page Template
 ;; --------------------
 
 Separator:  · 
-Navigation: <a href="https://brennanbrown.ca">Main Site</a>, <a href="https://berryhouse.ca">Berry House</a>, <a href="https://writeclub.ca">Write Club</a>, <a href="https://bkpoetry.com">Poetry</a>, /now, /tags
+Navigation: [<i class="fa-solid fa-house"></i> Home](/), [<i class="fa-regular fa-circle"></i> Now](/now), [<i class="fa-solid fa-circle-info"></i> About](/about), [<i class="fa-solid fa-box-archive"></i> Archive](/archive), [<i class="fa-solid fa-layer-group"></i> Pages](/pages), [<i class="fa-solid fa-infinity"></i> Blogroll](/blogroll), [<i class="fa-solid fa-envelope"></i> Contact](/contact), [<i class="fa-solid fa-rss"></i> RSS](/feed.xml)
 Files path: /files/
 Landing page post count: 3
 Landing page post length: 100 words
@@ -26,8 +26,8 @@ Post template: Post Template
 ;; ----------
 
 Pagination path: /page/
-Previous page template: <span class="previous-page"><a href="$previous_page">← Previous</a></span>
-Next page template: <span class="next-page"><a href="$next_page">Next →</a></span>
+Previous page template: <span class="previous-page"><a href="$previous_page">[← Older Posts]</a></span>
+Next page template: <span class="next-page"><a href="$next_page">[Newer Posts →]</a></span>
 
 
 ;; Time stuff
@@ -35,7 +35,7 @@ Next page template: <span class="next-page"><a href="$next_page">Next →</a></s
 
 ; Using Mountain Time (Calgary, Alberta)
 Timezone: America/Edmonton
-Date format: F j, Y
+Date format: Y-m-d
 
 
 ;; Feeds
@@ -48,7 +48,7 @@ Feed post appendix: <p><em>Read more at <a href="https://brennanbrown.ca">brenna
 ;; Posts
 ;; -----
 
-Post path format: /Y/m/
+Post path format: /
 Default post: <<[---
 Date: $date
 ---
@@ -67,12 +67,8 @@ Multiple posts format: <<[
 [post:begin]
 <article>
   {body}
-  <aside class="post-info">
-    <i class="fa-solid fa-calendar"></i> {date}
-  </aside>
-  <aside class="post-tags">
-    {tags}
-  </aside>
+  <aside class="post-info">$date</aside>
+  <aside class="post-tags">{tags}</aside>
 </article>
 [post:end]
 ]>>
@@ -82,19 +78,20 @@ Multiple posts format: <<[
 
 Recent posts count: 5
 Recent posts format: <<[
-<ul>
-[post:begin]<li><a href="$location">$title</a> · <span class="post-date">{date}</span></li>[post:end]
-</ul>]>>
-
+<div class="recent-posts-list">
+[post:begin]<article class="recent-post-item">
+<h2 class="recent-post-title"><a href="$location">$title</a></h2>
+<p class="recent-post-meta">$date</p>
+</article>[post:end]
+</div>]>>
 
 ;; Post list {post-list}
 ;; ---------------------
 
 Post list format: <<[
 <ul>
-[post:begin]<li><a href="$location">$title</a> · <span class="post-date">{date}</span></li>[post:end]
+[post:begin]<li><a href="$location">$title</a> · <span class="post-date">$date</span></li>[post:end]
 </ul>]>>
-
 
 ;; Page list {page-list}
 ;; ---------------------
@@ -103,7 +100,6 @@ Page list format: <<[
 <ul>
 [page:begin]<li><a href="$location">$title</a></li>[page:end]
 </ul>]>>
-
 
 ;; Search
 ;; ------
@@ -116,7 +112,7 @@ Search results format: <<[
 <h2>Results for "$search"</h2>
 <p>$search_results_message</p>
 [post:begin]<h3><a href="$location">$title</a></h3>
-<p><em>{date}</em></p>
+<p><em>$date</em></p>
 <p>$snippet</p>[post:end]
 ]>>
 
@@ -125,14 +121,14 @@ Search results format: <<[
 ;; -----------
 
 Tag path: /tag/
-// Tag page template: Tag Template
+Tag page template: Page Template
 Tags format: <<[
-[tag:begin]<a class="tag" href="$tag_location">#$tag</a>[tag:end]
+[tag:begin]<a class="tag" href="$tag_location">$tag</a>[tag:end]
 ]>>
 Tag page format: <<[
 <h2>Posts tagged "$tag"</h2>
 <ul>
-[tag:begin]<li><a href="$location">$title</a> · <span class="post-date">{date}</span></li>[tag:end]
+[tag:begin]<li><a href="$location">$title</a> · <span class="post-date">$date</span></li>[tag:end]
 </ul>
 ]>>
 
