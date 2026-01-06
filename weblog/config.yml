@@ -71,7 +71,6 @@ Multiple posts format: <<[
 <li>
   <h2><a href="$location">$title</a></h2>
   <div class="post-meta"><i class="fa-solid fa-clock"></i> {date}</div>
-  {body}
   <div class="post-meta"><i class="fa-solid fa-tag"></i> {tags}</div>
 </li>
 [post:end]
