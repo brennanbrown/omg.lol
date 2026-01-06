@@ -1,10 +1,14 @@
-name: Sync Weblog to omg.lol
+name: Sync Weblog Templates to omg.lol
 
 on:
   push:
     branches: [main, master]
     paths:
-      - 'weblog/**'
+      - 'weblog/landing-page-template.html'
+      - 'weblog/main-template.html'
+      - 'weblog/page-template.html'
+      - 'weblog/post-template.html'
+      - 'weblog/weblog.css'
   workflow_dispatch:
 
 jobs:
@@ -14,42 +18,53 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Sync weblog configuration
+      - name: Sync landing-page-template.html
         run: |
-          echo "Syncing configuration..."
+          CONTENT=$(cat weblog/landing-page-template.html)
+          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-            "https://api.omg.lol/address/brennan/weblog/configuration" \
-            --data-binary "@weblog/config.yml"
-          echo "Configuration synced!"
-
-      - name: Sync Landing Page Template
-        run: |
-          curl --fail-with-body --location --request POST \
-            --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
             "https://api.omg.lol/address/brennan/weblog/template/landing-page-template" \
-            --data-binary "@weblog/landing-page-template.html"
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{content: $content}')"
 
-      - name: Sync Main Template
+      - name: Sync main-template.html
         run: |
+          CONTENT=$(cat weblog/main-template.html)
+          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
             "https://api.omg.lol/address/brennan/weblog/template/main-template" \
-            --data-binary "@weblog/main-template.html"
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{content: $content}')"
 
-      - name: Sync Page Template
+      - name: Sync page-template.html
         run: |
+          CONTENT=$(cat weblog/page-template.html)
+          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
             "https://api.omg.lol/address/brennan/weblog/template/page-template" \
-            --data-binary "@weblog/page-template.html"
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{content: $content}')"
 
-      - name: Sync Post Template
+      - name: Sync post-template.html
         run: |
+          CONTENT=$(cat weblog/post-template.html)
+          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
             "https://api.omg.lol/address/brennan/weblog/template/post-template" \
-            --data-binary "@weblog/post-template.html"
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{content: $content}')"
 
       - name: Sync weblog.css
         run: |
