@@ -23,51 +23,31 @@ jobs:
 
       - name: Sync Landing Page Template
         run: |
-          CONTENT=$(cat weblog/landing-page-template.html)
-          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-            --header "Content-Type: application/json" \
             "https://api.omg.lol/address/brennan/weblog/template/landing-page-template" \
-            --data "$(jq -n \
-              --arg content "$CONTENT" \
-              '{template: $content}')"
+            --data-binary "@weblog/landing-page-template.html"
 
       - name: Sync Main Template
         run: |
-          CONTENT=$(cat weblog/main-template.html)
-          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-            --header "Content-Type: application/json" \
             "https://api.omg.lol/address/brennan/weblog/template/main-template" \
-            --data "$(jq -n \
-              --arg content "$CONTENT" \
-              '{template: $content}')"
+            --data-binary "@weblog/main-template.html"
 
       - name: Sync Page Template
         run: |
-          CONTENT=$(cat weblog/page-template.html)
-          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-            --header "Content-Type: application/json" \
             "https://api.omg.lol/address/brennan/weblog/template/page-template" \
-            --data "$(jq -n \
-              --arg content "$CONTENT" \
-              '{template: $content}')"
+            --data-binary "@weblog/page-template.html"
 
       - name: Sync Post Template
         run: |
-          CONTENT=$(cat weblog/post-template.html)
-          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-            --header "Content-Type: application/json" \
             "https://api.omg.lol/address/brennan/weblog/template/post-template" \
-            --data "$(jq -n \
-              --arg content "$CONTENT" \
-              '{template: $content}')"
+            --data-binary "@weblog/post-template.html"
 
       - name: Sync weblog.css
         run: |
