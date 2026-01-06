@@ -40,11 +40,23 @@ jobs:
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
             "https://api.omg.lol/address/brennan/weblog/template/page-template" \
-            --data-binary "@weblog/archive/page-template.html"
+            --data-binary "@weblog/page-template.html"
 
       - name: Sync Post Template
         run: |
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
             "https://api.omg.lol/address/brennan/weblog/template/post-template" \
-            --data-binary "@weblog/archive/post-template.html"
+            --data-binary "@weblog/post-template.html"
+
+      - name: Sync weblog.css
+        run: |
+          CONTENT=$(cat weblog/weblog.css)
+          
+          curl --fail-with-body --location --request POST \
+            --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --header "Content-Type: application/json" \
+            "https://api.omg.lol/address/brennan/pastebin/" \
+            --data "$(jq -n \
+              --arg content "$CONTENT" \
+              '{title: "weblog.css", content: $content}')"

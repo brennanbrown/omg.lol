@@ -3,10 +3,10 @@
 ;; About your weblog
 ;; -----------------
 
-Weblog title: Brennan's Weblog
-Weblog description: Essays, poetry, and musings on writing, technology, and the human experience. A Queer Métis writer exploring the intersections of Indigenous identity, digital culture, and creative craft.
-Author: Brennan Kenneth Brown
-// Canonical domain: brennan.weblog.lol
+Weblog title: brennan's diary
+Weblog description: A cozy corner for personal thoughts and diary entries
+Author: Brennan Brown
+// Canonical domain: elsewhere.tld
 // Landing page: /
 Landing page template: Landing Page Template
 
@@ -15,10 +15,10 @@ Landing page template: Landing Page Template
 ;; --------------------
 
 Separator:  · 
-Navigation: [<i class="fa-solid fa-house"></i> Home](/), [<i class="fa-regular fa-circle"></i> Now](/now), [<i class="fa-solid fa-circle-info"></i> About](/about), [<i class="fa-solid fa-box-archive"></i> Archive](/archive), [<i class="fa-solid fa-layer-group"></i> Pages](/pages), [<i class="fa-solid fa-infinity"></i> Blogroll](/blogroll), [<i class="fa-solid fa-envelope"></i> Contact](/contact), [<i class="fa-solid fa-rss"></i> RSS](/feed.xml)
+Navigation: about, archive, [main site](https://brennan.day), [RSS](/rss)
 Files path: /files/
-Landing page post count: 3
-Landing page post length: 100 words
+Landing page post count: 10
+// Landing page post length: 45 words
 Post template: Post Template
 
 
@@ -26,23 +26,25 @@ Post template: Post Template
 ;; ----------
 
 Pagination path: /page/
-Previous page template: <span class="previous-page"><a href="$previous_page">[← Older Posts]</a></span>
-Next page template: <span class="next-page"><a href="$next_page">[Newer Posts →]</a></span>
+Previous page template: <span class="previous-page"><a href="$previous_page">← Previous Page</a></span>
+Next page template: <span class="next-page"><a href="$next_page">Next Page →</a></span>
 
 
 ;; Time stuff
 ;; ----------
 
-; Using Mountain Time (Calgary, Alberta)
+; You can use a timezone value from the "TZ database name" column on this 
+; web page: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
 Timezone: America/Edmonton
-Date format: Y-m-d
+Date format: g:i A on F j, Y
 
 
 ;; Feeds
 ;; -----
 
 Feed post count: 25
-Feed post appendix: <p><em>Read more at <a href="https://brennanbrown.ca">brennanbrown.ca</a> or support my work on <a href="https://patreon.com/brennankbrown">Patreon</a>.</em></p>
+// Feed post appendix: <p><em>Published with weblog.lol!</em></p>
 
 
 ;; Posts
@@ -55,22 +57,27 @@ Date: $date
 
 # Your new post
 
-Write something worth reading. Make it human.
+This is a new blog post. You can author it in _Markdown_, which is **awesome**.
 ]>>
 
-Titleless title length: 20 words
-Truncation appendix:  […]
+Titleless title length: 15 words
+// Truncation appendix:  […]
 // Title format: <h1><a href="$permalink">$title</a></h1>
 
 Multiple posts count: 10
 Multiple posts format: <<[
+<ul class="post-list">
 [post:begin]
 <article>
+<li>
+  <h2><a href="$location">$title</a></h2>
+  <div class="post-meta"><i class="fa-solid fa-clock"></i> {date}</div>
   {body}
-  <aside class="post-info">$date</aside>
-  <aside class="post-tags">{tags}</aside>
-</article>
+  <div class="post-meta"><i class="fa-solid fa-tag"></i> {tags}</div>
+</li>
 [post:end]
+</article>
+</ul>
 ]>>
 
 ;; Recent posts {recent-posts}
@@ -78,20 +85,21 @@ Multiple posts format: <<[
 
 Recent posts count: 5
 Recent posts format: <<[
-<div class="recent-posts-list">
-[post:begin]<article class="recent-post-item">
-<h2 class="recent-post-title"><a href="$location">$title</a></h2>
-<p class="recent-post-meta">$date</p>
-</article>[post:end]
-</div>]>>
+<h2>Recent posts</h2>
+<ul class="post-list">
+[post:begin]<li><a href="$location">$title</a> — {date}</li>[post:end]
+</ul>]
+>>
+
 
 ;; Post list {post-list}
 ;; ---------------------
 
 Post list format: <<[
 <ul>
-[post:begin]<li><a href="$location">$title</a> · <span class="post-date">$date</span></li>[post:end]
+[post:begin]<li><a href="$location">$title</a></li>[post:end]
 </ul>]>>
+
 
 ;; Page list {page-list}
 ;; ---------------------
@@ -101,18 +109,19 @@ Page list format: <<[
 [page:begin]<li><a href="$location">$title</a></li>[page:end]
 </ul>]>>
 
+
 ;; Search
 ;; ------
 
 Search status: enabled
 Search template: Page Template
-Search results success message: Found $count [result|results] for your search:
-Search results failure message: No results found. Try different keywords or browse <a href="/tags">all tags</a>.
+Search results success message: There [is|are] $count [result|results] for your search:
+Search results failure message: There were no results found for your search.
 Search results format: <<[
-<h2>Results for "$search"</h2>
+<h2>Results for “$search”</h2>
 <p>$search_results_message</p>
 [post:begin]<h3><a href="$location">$title</a></h3>
-<p><em>$date</em></p>
+<p>$date</p>
 <p>$snippet</p>[post:end]
 ]>>
 
@@ -121,24 +130,24 @@ Search results format: <<[
 ;; -----------
 
 Tag path: /tag/
-Tag page template: Page Template
+// Tag page template: Tag Template
 Tags format: <<[
 [tag:begin]<a class="tag" href="$tag_location">$tag</a>[tag:end]
 ]>>
 Tag page format: <<[
-<h2>Posts tagged "$tag"</h2>
+<h2>Posts tagged with “$tag”</h2>
 <ul>
-[tag:begin]<li><a href="$location">$title</a> · <span class="post-date">$date</span></li>[tag:end]
+[tag:begin]<li><a href="$location">$title</a></li>[tag:end]
 </ul>
 ]>>
 
 Tag listing path: /tags
 // Tag listing template: Tag Listing Template
-Tag listing order: descending
+// Note: tag listing order can be "alphabetical", "ascending", or "descending" where alphabetical sorts by the tag name and ascending/descending sorts by the count of entries with that tag
+Tag listing order: alphabetical
 Tag listing format: <<[
-<h2>All Tags</h2>
-<p>Browse by topic. Tags are sorted by frequency.</p>
-<ul class="tag-cloud">
-[tag:begin]<li><a href="$location">$tag</a> <span class="tag-count">($count)</span></li>[tag:end]
+<h2>Tags</h2>
+<ul>
+[tag:begin]<li><a href="$location">$tag</a> ($count)</li>[tag:end]
 </ul>
 ]>>
