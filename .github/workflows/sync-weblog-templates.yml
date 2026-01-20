@@ -20,39 +20,69 @@ jobs:
 
       - name: Sync landing-page-template.html
         run: |
+          echo "🔍 Debug: Uploading landing-page-template.html"
+          echo "📁 File exists: $(test -f weblog/landing-page-template.html && echo 'YES' || echo 'NO')"
+          echo "📄 File size: $(wc -c < weblog/landing-page-template.html) bytes"
+          echo "🔗 API endpoint: https://api.omg.lol/address/brennan/weblog/template/landing-page-template"
+          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --verbose \
             "https://api.omg.lol/address/brennan/weblog/template/landing-page-template" \
             --data-binary "@weblog/landing-page-template.html"
 
       - name: Sync default-template.html
         run: |
+          echo "🔍 Debug: Uploading default-template.html"
+          echo "📁 File exists: $(test -f weblog/default-template.html && echo 'YES' || echo 'NO')"
+          echo "📄 File size: $(wc -c < weblog/default-template.html) bytes"
+          echo "🔗 API endpoint: https://api.omg.lol/address/brennan/weblog/template/main-template"
+          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
-            "https://api.omg.lol/address/brennan/weblog/template/default-template" \
+            --verbose \
+            "https://api.omg.lol/address/brennan/weblog/template/main-template" \
             --data-binary "@weblog/default-template.html"
 
       - name: Sync page-template.html
         run: |
+          echo "🔍 Debug: Uploading page-template.html"
+          echo "📁 File exists: $(test -f weblog/page-template.html && echo 'YES' || echo 'NO')"
+          echo "📄 File size: $(wc -c < weblog/page-template.html) bytes"
+          echo "🔗 API endpoint: https://api.omg.lol/address/brennan/weblog/template/page-template"
+          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --verbose \
             "https://api.omg.lol/address/brennan/weblog/template/page-template" \
             --data-binary "@weblog/page-template.html"
 
       - name: Sync post-template.html
         run: |
+          echo "🔍 Debug: Uploading post-template.html"
+          echo "📁 File exists: $(test -f weblog/post-template.html && echo 'YES' || echo 'NO')"
+          echo "📄 File size: $(wc -c < weblog/post-template.html) bytes"
+          echo "🔗 API endpoint: https://api.omg.lol/address/brennan/weblog/template/post-template"
+          
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
+            --verbose \
             "https://api.omg.lol/address/brennan/weblog/template/post-template" \
             --data-binary "@weblog/post-template.html"
 
       - name: Sync weblog.css
         run: |
+          echo "🔍 Debug: Uploading weblog.css"
+          echo "📁 File exists: $(test -f weblog/weblog.css && echo 'YES' || echo 'NO')"
+          echo "📄 File size: $(wc -c < weblog/weblog.css) bytes"
+          echo "🔗 API endpoint: https://api.omg.lol/address/brennan/pastebin/"
+          
           CONTENT=$(cat weblog/weblog.css)
           
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
             --header "Content-Type: application/json" \
+            --verbose \
             "https://api.omg.lol/address/brennan/pastebin/" \
             --data "$(jq -n \
               --arg content "$CONTENT" \
