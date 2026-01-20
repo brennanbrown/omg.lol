@@ -5,7 +5,7 @@ on:
     branches: [main, master]
     paths:
       - 'weblog/landing-page-template.html'
-      - 'weblog/main-template.html'
+      - 'weblog/default-template.html'
       - 'weblog/page-template.html'
       - 'weblog/post-template.html'
       - 'weblog/weblog.css'
@@ -30,14 +30,14 @@ jobs:
               --arg content "$CONTENT" \
               '{content: $content}')"
 
-      - name: Sync main-template.html
+      - name: Sync default-template.html
         run: |
-          CONTENT=$(cat weblog/main-template.html)
+          CONTENT=$(cat weblog/default-template.html)
           
           curl --fail-with-body --location --request POST \
             --header "Authorization: Bearer ${{ secrets.OMG_LOL_API_KEY }}" \
             --header "Content-Type: application/json" \
-            "https://api.omg.lol/address/brennan/weblog/template/main-template" \
+            "https://api.omg.lol/address/brennan/weblog/template/default-template" \
             --data "$(jq -n \
               --arg content "$CONTENT" \
               '{content: $content}')"

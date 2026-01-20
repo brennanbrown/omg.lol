@@ -13,54 +13,23 @@ Title: Landing Page Template
 <body>
 
 <header>
-	<nav>
-		<div class="nav-left">
-			<a href="/">{weblog-title}</a>
-		</div>
-		<div class="nav-right">
-			{navigation}
-		</div>
-	</nav>
+	<h1 class="weblog-title"><a href="{base-path}">{weblog-title}</a></h1>
+	{navigation}
 </header>
 
 <main>
-	<div class="site-blurb">
-		<p>Welcome to my cozy corner of the web! This is where I share personal thoughts and diary-style entries. For my more formal blog posts and projects, visit <a href="https://brennan.day">brennan.day</a>.</p>
-	</div>
 
-	{body}
+{body}
 
-	<nav class="pagination">
-		{previous-page}
-		{next-page}
-	</nav>
+<nav>
+{previous-page}
+{next-page}
+</nav>
 
 </main>
 
 <footer>
-	<nav class="footer-links">
-		<a href="https://brennan.omg.lol" aria-label="omg.lol">
-			<i class="fas fa-laptop"></i>
-		</a>
-		<a href="mailto:brennan@omg.lol" aria-label="Email">
-			<i class="fas fa-envelope"></i>
-		</a>
-		<a href="https://brennan.day" aria-label="Main weblog">
-			<i class="fas fa-blog"></i>
-		</a>
-		<a href="https://brennan.some.pics/" aria-label="Photo gallery">
-			<i class="fas fa-image"></i>
-		</a>
-		<a href="https://brennan.social.lol" aria-label="Mastodon">
-			<i class="fab fa-mastodon"></i>
-		</a>
-		<a href="https://source.tube/brennan" aria-label="Source code">
-			<i class="fas fa-code-branch"></i>
-		</a>
-		<a href="https://brennan.paste.lol" aria-label="Pastebin">
-			<i class="fas fa-paste"></i>
-		</a>
-	</nav>
+	<p>Made with <a href="https://weblog.lol">weblog.lol</a>.</p>
 </footer>
 
 </body>
